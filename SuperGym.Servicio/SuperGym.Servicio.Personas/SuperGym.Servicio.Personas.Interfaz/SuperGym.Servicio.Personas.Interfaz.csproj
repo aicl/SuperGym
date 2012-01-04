@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{895E3DFC-39B8-401A-A003-6708BD96B7BD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SuperGym.Servicio.Personas.Interfaz</RootNamespace>
+    <AssemblyName>SuperGym.Servicio.Personas.Interfaz</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="ServiceStack.Common, Version=1.0.4189.30552, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack, Version=2.2.6.30553, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.4189.30552, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmSimple, Version=1.0.4281.14321, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.OrmSimple.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.ServiceInterface, Version=1.0.4189.30554, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.ServiceInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="Reportman.Drawing, Version=1.0.3276.31109, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\Reportman.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Reportman.Reporting, Version=1.0.3276.31111, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\Reportman.Reporting.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=2.2.4.38332, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="PersonaService.cs" />
+    <Compile Include="ProfesionesService.cs" />
+    <Compile Include="ClasificacionesService.cs" />
+    <Compile Include="TiposDocumentoService.cs" />
+    <Compile Include="MunicipiosService.cs" />
+    <Compile Include="FotoService.cs" />
+    <Compile Include="FacturaService.cs" />
+    <Compile Include="TipoPagoService.cs" />
+    <Compile Include="Informes\InformeService.cs" />
+    <Compile Include="HtmlReport.cs" />
+    <Compile Include="Caja\CajaService.cs" />
+    <Compile Include="Caja\DeCajaService.cs" />
+    <Compile Include="Utilities\AppConfig.cs" />
+    <Compile Include="Utilities\Mailer.cs" />
+    <Compile Include="Extensiones\Extensiones.cs" />
+    <Compile Include="Concepto\ConceptoService.cs" />
+    <Compile Include="Administracion\UsuarioService.cs" />
+    <Compile Include="Administracion\GrupoService.cs" />
+    <Compile Include="Administracion\GrupoUsuarioService.cs" />
+    <Compile Include="Administracion\CorreoService.cs" />
+    <Compile Include="Administracion\ActividadServicio.cs" />
+    <Compile Include="Administracion\GrupoActividadService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SuperGym.Records\SuperGym.Records.csproj">
+      <Project>{4D9F4BA2-83CD-400A-8471-2356CF2CCBBA}</Project>
+      <Name>SuperGym.Records</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SuperGym.Servicio.Autenticacion\SuperGym.Servicio.Autenticacion.Modelos\SuperGym.Servicio.Autenticacion.Modelos.csproj">
+      <Project>{55D8B916-A0AD-4E55-A631-4D0BF47D4DA2}</Project>
+      <Name>SuperGym.Servicio.Autenticacion.Modelos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SuperGym.Tablas\SuperGym.Tablas.csproj">
+      <Project>{33D18BBD-8B00-442F-9328-D278DCCC6B41}</Project>
+      <Name>SuperGym.Tablas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SuperGym.Servicio.Personas.Modelos\SuperGym.Servicio.Personas.Modelos.csproj">
+      <Project>{0C394D03-2E65-461E-9183-2F3325003C6B}</Project>
+      <Name>SuperGym.Servicio.Personas.Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Informes\" />
+    <Folder Include="Caja\" />
+    <Folder Include="Utilities\" />
+    <Folder Include="Extensiones\" />
+    <Folder Include="Administracion\" />
+    <Folder Include="Concepto\" />
+  </ItemGroup>
+</Project>

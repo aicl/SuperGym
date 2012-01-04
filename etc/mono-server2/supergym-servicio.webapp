@@ -1,0 +1,11 @@
+<web-application>
+    <name>SuperGym Servicio Web</name>
+    <vpath>/servicio</vpath>
+    <path>/home/angel/Projects/desarrollos/SuperGym/SuperGym.Servicio/SuperGym.Servicio.Personas</path>
+    <vhost>localhost</vhost>
+    <port>80</port>
+</web-application>
+
+  
+
+

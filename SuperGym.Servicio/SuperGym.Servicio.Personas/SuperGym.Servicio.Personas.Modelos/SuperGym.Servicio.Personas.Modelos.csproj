@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0C394D03-2E65-461E-9183-2F3325003C6B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SuperGym.Servicio.Personas.Modelos</RootNamespace>
+    <AssemblyName>SuperGym.Servicio.Personas.Modelos</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.4189.30552, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmSimple, Version=1.0.4281.14321, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\lib\ServiceStack.OrmSimple.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Tipos\PersonaGet.cs" />
+    <Compile Include="Operaciones\PersonaGetResponse.cs" />
+    <Compile Include="Tipos\PersonaUpdate.cs" />
+    <Compile Include="Operaciones\PersonaUpdateResponse.cs" />
+    <Compile Include="Tipos\ProfesionesGet.cs" />
+    <Compile Include="Operaciones\ProfesionesGetResponse.cs" />
+    <Compile Include="Tipos\ClasificacionesGet.cs" />
+    <Compile Include="Tipos\TiposDocumentoGet.cs" />
+    <Compile Include="Operaciones\ClasificacionesGetResponse.cs" />
+    <Compile Include="Operaciones\TiposDocumentoGetResponse.cs" />
+    <Compile Include="Tipos\MunicipiosGet.cs" />
+    <Compile Include="Operaciones\MunicipiosGetResponse.cs" />
+    <Compile Include="Tipos\PersonasGet.cs" />
+    <Compile Include="Operaciones\PersonasGetResponse.cs" />
+    <Compile Include="Tipos\PersonaInsert.cs" />
+    <Compile Include="Tipos\FotoUpload.cs" />
+    <Compile Include="Operaciones\FotoUploadResponse.cs" />
+    <Compile Include="Tipos\FacturaSiguienteNumeroGet.cs" />
+    <Compile Include="Operaciones\FacturaSiguienteNumeroGetResponse.cs" />
+    <Compile Include="Tipos\FacturaTipoPagoGet.cs" />
+    <Compile Include="Operaciones\FacturaTipoPagoGetResponse.cs" />
+    <Compile Include="Tipos\FacturaPagoInsert.cs" />
+    <Compile Include="Operaciones\PersonaInsertResponse.cs" />
+    <Compile Include="Operaciones\FacturaPagoInsertResponse.cs" />
+    <Compile Include="Tipos\PersonaValidar.cs" />
+    <Compile Include="Operaciones\PersonaValidarResponse.cs" />
+    <Compile Include="Tipos\TiposPagoGet.cs" />
+    <Compile Include="Operaciones\TiposPagoGetResponse.cs" />
+    <Compile Include="Tipos\TipoPagoDelete.cs" />
+    <Compile Include="Operaciones\TipoPagoDeleteResponse.cs" />
+    <Compile Include="Tipos\TipoPagoUpdate.cs" />
+    <Compile Include="Tipos\TipoPagoInsert.cs" />
+    <Compile Include="Operaciones\TipoPagoInsertResponse.cs" />
+    <Compile Include="Operaciones\TipoPagoUpdateResponse.cs" />
+    <Compile Include="Tipos\PersonaFacturasGet.cs" />
+    <Compile Include="Operaciones\PersonaFacturasGetResponse.cs" />
+    <Compile Include="Tipos\Informes\FacturacionDiaGet.cs" />
+    <Compile Include="Operaciones\Informes\FacturacionDiaGetResponse.cs" />
+    <Compile Include="Tipos\Informes\PersonasActivasGet.cs" />
+    <Compile Include="Operaciones\Informes\PersonasActivasGetResponse.cs" />
+    <Compile Include="Operaciones\Informes\PersonasInactivasGetResponse.cs" />
+    <Compile Include="Tipos\Informes\PersonasInactivasGet.cs" />
+    <Compile Include="Tipos\Caja\CajaInsert.cs" />
+    <Compile Include="Operaciones\Caja\CajaInsertResponse.cs" />
+    <Compile Include="Tipos\Caja\CajaDelete.cs" />
+    <Compile Include="Tipos\Caja\CajaAsentar.cs" />
+    <Compile Include="Operaciones\Caja\CajaDeleteResponse.cs" />
+    <Compile Include="Operaciones\Caja\CajaAsentarResponse.cs" />
+    <Compile Include="Tipos\Caja\CajasGet.cs" />
+    <Compile Include="Tipos\Caja\DeCajasGet.cs" />
+    <Compile Include="Operaciones\Caja\DeCajasGetResponse.cs" />
+    <Compile Include="Tipos\Caja\DeCajaInsert.cs" />
+    <Compile Include="Operaciones\Caja\DeCajaInsertResponse.cs" />
+    <Compile Include="Tipos\Caja\DeCajaDelete.cs" />
+    <Compile Include="Operaciones\Caja\DeCajaDeleteResponse.cs" />
+    <Compile Include="Tipos\Caja\DeCajaUpdate.cs" />
+    <Compile Include="Operaciones\Caja\DeCajaUpdateResponse.cs" />
+    <Compile Include="Tipos\FacturaPagoAnular.cs" />
+    <Compile Include="Operaciones\FacturaPagoAnularResponse.cs" />
+    <Compile Include="Operaciones\Caja\CajasGetResponse.cs" />
+    <Compile Include="Tipos\SuspensionInsert.cs" />
+    <Compile Include="Operaciones\SuspensionInsertResponse.cs" />
+    <Compile Include="Tipos\SuspensionesGet.cs" />
+    <Compile Include="Operaciones\SuspensionesGetResponse.cs" />
+    <Compile Include="Tipos\SuspensionDelete.cs" />
+    <Compile Include="Operaciones\SuspensionDeleteResponse.cs" />
+    <Compile Include="Tipos\Informes\CajaConsolidadoGet.cs" />
+    <Compile Include="Operaciones\Informes\CajaConsolidadoGetResponse.cs" />
+    <Compile Include="Tipos\Informes\CajaCierreGet.cs" />
+    <Compile Include="Tipos\Informes\DetalleFacturasDiaGet.cs" />
+    <Compile Include="Operaciones\Informes\CajaCierreGetResponse.cs" />
+    <Compile Include="Operaciones\Informes\DetalleFacturasDiaGetResponse.cs" />
+    <Compile Include="Tipos\Caja\ConceptosCajaGet.cs" />
+    <Compile Include="Operaciones\Caja\ConceptosCajaGetResponse.cs" />
+    <Compile Include="Tipos\Conceptos\ConceptosGet.cs" />
+    <Compile Include="Tipos\Conceptos\ConceptoInsert.cs" />
+    <Compile Include="Tipos\Conceptos\ConceptoUpdate.cs" />
+    <Compile Include="Tipos\Conceptos\ConceptoDelete.cs" />
+    <Compile Include="Operaciones\Conceptos\ConceptosGetResponse.cs" />
+    <Compile Include="Operaciones\Conceptos\ConceptoDeleteResponse.cs" />
+    <Compile Include="Operaciones\Conceptos\ConceptoInsertResponse.cs" />
+    <Compile Include="Operaciones\Conceptos\ConceptoUpdateResponse.cs" />
+    <Compile Include="Tipos\Administracion\Usuario.cs" />
+    <Compile Include="Operaciones\Administracion\UsuarioResponse.cs" />
+    <Compile Include="Tipos\Administracion\Grupo.cs" />
+    <Compile Include="Operaciones\Administracion\GrupoResponse.cs" />
+    <Compile Include="Tipos\Administracion\GrupoUsuario.cs" />
+    <Compile Include="Operaciones\Administracion\GrupoUsuarioResponse.cs" />
+    <Compile Include="Tipos\Administracion\Correo.cs" />
+    <Compile Include="Operaciones\Administracion\CorreoResponse.cs" />
+    <Compile Include="Tipos\Administracion\Actividad.cs" />
+    <Compile Include="Operaciones\Administracion\ActividadResponse.cs" />
+    <Compile Include="Tipos\Administracion\GrupoActividad.cs" />
+    <Compile Include="Operaciones\Administracion\GrupoActividadResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Operaciones\" />
+    <Folder Include="Tipos\" />
+    <Folder Include="Tipos\Informes\" />
+    <Folder Include="Operaciones\Informes\" />
+    <Folder Include="Operaciones\Caja\" />
+    <Folder Include="Tipos\Caja\" />
+    <Folder Include="Tipos\Administracion\" />
+    <Folder Include="Operaciones\Administracion\" />
+    <Folder Include="Tipos\Conceptos\" />
+    <Folder Include="Operaciones\Conceptos\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\SuperGym.Records\SuperGym.Records.csproj">
+      <Project>{4D9F4BA2-83CD-400A-8471-2356CF2CCBBA}</Project>
+      <Name>SuperGym.Records</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\SuperGym.Servicio.Autenticacion\SuperGym.Servicio.Autenticacion.Modelos\SuperGym.Servicio.Autenticacion.Modelos.csproj">
+      <Project>{55D8B916-A0AD-4E55-A631-4D0BF47D4DA2}</Project>
+      <Name>SuperGym.Servicio.Autenticacion.Modelos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

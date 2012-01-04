@@ -1,0 +1,74 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:	 redis-server
+# Required-Start:	$syslog
+# Required-Stop:	$syslog
+# Should-Start:	 $local_fs
+# Should-Stop:	 $local_fs
+# Default-Start:	2 3 4 5
+# Default-Stop:	 0 1 6
+# Short-Description:	redis-server - Persistent key-value db
+# Description:	 redis-server - Persistent key-value db
+### END INIT INFO
+
+REDISPORT=6379
+CLIEXEC=/usr/local/bin/redis-cli
+
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/local/bin/redis-server
+#DAEMON_ARGS=/etc/redis.conf
+DAEMON_ARGS=/etc/redis/${REDISPORT}.conf
+NAME=redis-server
+DESC=redis-server
+#PIDFILE=/var/run/redis.pid
+PIDFILE=/var/run/redis_${REDISPORT}.pid
+
+# Use LSB
+. /lib/lsb/init-functions
+
+test -x $DAEMON || exit 0
+test -x $DAEMONBOOTSTRAP || exit 0
+
+set -e
+
+case "$1" in
+start)
+if [ -f $PIDFILE ]
+then
+	log_action_msg "$PIDFILE exists, process is already running or crashed"
+else
+	log_daemon_msg "Starting $DESC: " "$PIDFILE"
+	start-stop-daemon --start --quiet --background --umask 007 --make-pidfile --pidfile $PIDFILE --chuid redis:redis --exec $DAEMON -- $DAEMON_ARGS
+	log_end_msg $?	
+fi
+;;
+stop)
+if [ ! -f $PIDFILE ]
+then
+	log_action_msg "$PIDFILE does not exist, process is not running"
+else
+	PID=$(cat $PIDFILE)
+	log_daemon_msg "Stopping $DESC: " "$PIDFILE"
+	$CLIEXEC -p $REDISPORT shutdown
+	i=0
+	while [ -x /proc/${PID} ] && [ "$i" -lt "20" ]
+	do
+		echo "Waiting for Redis to shutdown ..."
+		sleep 1
+	i++	
+	done
+	log_end_msg $?
+	rm -f $PIDFILE
+fi
+;;
+restart|force-reload)
+${0} stop
+${0} start
+;;
+*)
+echo "Usage: /etc/init.d/$NAME {start|stop|restart|force-reload}" >&2
+exit 1
+;;
+esac
+exit 0
+

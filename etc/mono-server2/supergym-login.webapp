@@ -1,0 +1,9 @@
+<web-application>
+    <name>SuperGym Login</name>
+    <vpath>/bp</vpath>
+    <path>/home/angel/Projects/desarrollos/SuperGym/SuperGym.WebApp</path>
+    <vhost>localhost</vhost>
+    <port>80</port>
+</web-application>  
+
+

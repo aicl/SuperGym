@@ -1,0 +1,5 @@
+# This is the configuration file
+# for the aspnet-examples virtualhost
+path = /usr/share/asp.net2-demos
+alias = /samples
+libs = /usr/lib/mono/2.0

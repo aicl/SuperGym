@@ -1,0 +1,8 @@
+<web-application>
+    <name>samples</name>
+    <vpath>/samples</vpath>
+    <path>/usr/share/asp.net2-demos</path>
+    <vhost>localhost</vhost>
+    <port>80</port>
+</web-application>
+

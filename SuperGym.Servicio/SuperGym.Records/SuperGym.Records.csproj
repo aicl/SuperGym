@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4D9F4BA2-83CD-400A-8471-2356CF2CCBBA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>SuperGym.Records</RootNamespace>
+    <AssemblyName>SuperGym.Records</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="ServiceStack.Common, Version=1.0.4189.30552, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\ServiceStack.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=1.0.4189.30552, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\ServiceStack.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmSimple, Version=1.0.4281.14321, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\ServiceStack.OrmSimple.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="Actividad.cs" />
+    <Compile Include="Grupo.cs" />
+    <Compile Include="GrupoActividad.cs" />
+    <Compile Include="GrupoUsuario.cs" />
+    <Compile Include="Auxiliares\UsuarioGruposActividades.cs" />
+    <Compile Include="Auxiliares\Permisos.cs" />
+    <Compile Include="Auxiliares\Grupo.cs" />
+    <Compile Include="Persona.cs" />
+    <Compile Include="Profesion.cs" />
+    <Compile Include="TipoDocumento.cs" />
+    <Compile Include="Clasificacion.cs" />
+    <Compile Include="Departamento.cs" />
+    <Compile Include="Municipio.cs" />
+    <Compile Include="Pago.cs" />
+    <Compile Include="Auxiliares\UltimaFactura.cs" />
+    <Compile Include="TipoPago.cs" />
+    <Compile Include="Ingreso.cs" />
+    <Compile Include="Auxiliares\FacturacionDia.cs" />
+    <Compile Include="Auxiliares\PersonaActiva.cs" />
+    <Compile Include="Auxiliares\PersonaInactiva.cs" />
+    <Compile Include="Caja.cs" />
+    <Compile Include="DeCaja.cs" />
+    <Compile Include="Auxiliares\UsuarioCorreo.cs" />
+    <Compile Include="Suspension.cs" />
+    <Compile Include="Auxiliares\ConceptoValor.cs" />
+    <Compile Include="Auxiliares\FacturaDiaDetalle.cs" />
+    <Compile Include="Auxiliares\DeCajaClasificacion.cs" />
+    <Compile Include="Concepto.cs" />
+    <Compile Include="Correo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Auxiliares\" />
+  </ItemGroup>
+</Project>

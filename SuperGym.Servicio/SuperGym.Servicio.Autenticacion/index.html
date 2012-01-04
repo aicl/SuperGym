@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>Validate User :: Ajax Client</title>
+
+    <link href="css/default.css"  rel="stylesheet" type="text/css" />
+
+    
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script >
+    <script type="text/javascript" src="js/ServiceStack.js"></script >
+
+    <script type="text/javascript">
+    <!--
+        //Get the hostName of this page
+
+        //Create a ClientGateway passing in the baseUrl where your services are hosted.
+        //Note: services not on the same domain require a crossdomain.xml policy
+        var gateway = new servicestack.ClientGateway(
+                location.protocol + "//" + location.host+'/autenticacion');
+
+        $(function()
+        {
+
+            $("#btnUserData").click(function()
+            {
+                gateway.getFromService({
+                        LoginData: { UserName: $("#txtUserName").val(), Password:$("#txtPassword").val() }
+                    },
+                    function(e) {
+                    	
+                        var resultHtml = '<div class="user">';
+                        for( var prop in e){
+                        	resultHtml += prop +":" + e[prop] + "<br />";
+                        }
+                        resultHtml += "</div>";
+                        
+                        $("#serviceUserData .result").html(resultHtml);
+                    },
+        			function(ex) {
+            			alert("Error al validar usuario: " + ex.errorCode + " " + ex.message);
+        }
+                    );
+            });
+
+ 
+        });
+    -->
+    </script >
+
+</head>
+<body>
+
+
+    <h1>Authenticate User Service with Ajax</h1>
+
+        <div id="serviceUserData" class="service">
+
+            <div class="input">
+                <h3>Get User Data Service</h3>
+
+                <div class="form">
+                    <label>Name:</label>
+                    <input type="text" id="txtUserName" value="" /><br/>
+					<input type="password" id="txtPassword" value="" /><br/>
+                </div>
+
+                <button id="btnUserData">Get User Data</button>
+            </div>
+
+            <h4>Result</h4>
+            <div class="result"></div>
+        </div>
+
+        <span class="r"></span>
+
+
+    <h4>4. Check out the other ways to call your services</h4>
+    <p>
+        One of the nice things about ServiceStack is that by using <acronym title="Plain Old CSharp Objects">POCO</acronym> classes to define your Service Interface
+        we're able to seperate the 'message' (payload) from the communication 'channel' that delivers it.
+    </p>
+    <p>
+        This means that calling your services using XML is as easy as sending your request to a different end point.
+        So calling your service via XML is as easy as:
+        <ol>
+            <li><a href="Xml/SyncReply/LoginData?UserName=leo&amp;Password=1234" target="_blank">
+                Xml/SyncReply/UserData?Name=leo&amp;Password=1234</a>
+            </li>
+            
+			<li><a href="Json/SyncReply/LoginData?UserName=leo&amp;Password=1234" target="_blank">
+                Json/SyncReply/UserData?Name=leo&amp;Password=1234</a>
+            </li>
+        </ol>
+        <br />
+        Out of the box ServiceStack provides REST+JSON, REST+XML and <acronym title="Plain Old XML">POX</acronym>, SOAP 1.1 and SOAP 1.2 end points.
+    </p>
+    <p>
+        The dynamic <a href="metadata">metadata summary page</a>
+        has a complete list of web services and end points that are available.<br />
+    </p>
+
+</body>
+</html>
+
+
