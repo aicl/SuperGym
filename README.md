@@ -1,9 +1,15 @@
 Requisitos de Software:
+
 mono http://www.go-mono.com/mono-downloads/download.html
+
 redis http://redis.io
+
 servicestack http://www.servicestack.net/
+
 firebirdsql http://www.firebirdsql.org/
+
 reportman http://reportman.sourceforge.net/
+
 extjs http://www.sencha.com/
 
 ==========================
