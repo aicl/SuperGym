@@ -1,4 +1,4 @@
-
+// gpl version 3.0
 Ext.require([
     'Ext.form.*',
     'Ext.layout.container.Column',
