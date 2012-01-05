@@ -9,6 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SuperGym.Servicio.Personas.Modelos</RootNamespace>
     <AssemblyName>SuperGym.Servicio.Personas.Modelos</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

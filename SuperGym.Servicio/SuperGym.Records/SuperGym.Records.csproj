@@ -9,6 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SuperGym.Records</RootNamespace>
     <AssemblyName>SuperGym.Records</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
