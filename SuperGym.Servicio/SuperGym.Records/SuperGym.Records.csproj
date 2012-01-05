@@ -9,7 +9,6 @@
     <OutputType>Library</OutputType>
     <RootNamespace>SuperGym.Records</RootNamespace>
     <AssemblyName>SuperGym.Records</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -75,6 +74,8 @@
     <Compile Include="Auxiliares\DeCajaClasificacion.cs" />
     <Compile Include="Concepto.cs" />
     <Compile Include="Correo.cs" />
+    <Compile Include="SaldoPorCobrar.cs" />
+    <Compile Include="Auxiliares\Cartera.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

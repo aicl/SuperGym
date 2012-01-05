@@ -306,6 +306,36 @@ Ext.onReady(function(){
     	}
 	});
 	
+	var buttonCartera= Ext.create('Ext.Button', {
+    	text    : 'Cartera',
+    	scale   : 'medium',
+    	flex:1,
+    	handler	: function(){
+    		if(sessionStorage.id){
+    			executeAjaxRequest({
+					url: url+'/json/asynconeway/Cartera',
+					success: function(result) {   					
+						if(lastForm) lastForm.hide();
+						Ext.create('Ext.window.Window', {
+					    	height: 720,
+    						width: 950,
+							autoScroll : true,
+    						layout: 'fit',
+    						items: {  
+								xtype: 'component',
+							    autoEl: {
+        							html: result.HtmlResponse
+    							}
+							}
+						}).show();							
+						lastResult=null;
+				    },
+					params:{ SessionId:sessionStorage.id} 
+				});
+    		}
+    	}
+	});
+	
 	
 	var buttonActivos= Ext.create('Ext.Button', {
     	text    : 'Activos',
@@ -770,7 +800,7 @@ Ext.onReady(function(){
     			},
     			defaults:{margins:'5 5 5 5'},
         		items:[
-        			buttonResultados,buttonMatriculas,buttonFacturacionDia,buttonDiario,buttonActivos,buttonInactivos
+        			buttonResultados,buttonMatriculas,buttonFacturacionDia,buttonDiario,buttonCartera,buttonActivos,buttonInactivos
         		]
             }]
        		}, {

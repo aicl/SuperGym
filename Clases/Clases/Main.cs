@@ -49,7 +49,7 @@ namespace Clases
 				//}
 					
 				
-				Table t = new Table(){Name=	"CORREOS"};
+				Table t = new Table(){Name=	"SALDOPORCOBRAR"};
 				cw.WriteClass(t);
 			
 			}
