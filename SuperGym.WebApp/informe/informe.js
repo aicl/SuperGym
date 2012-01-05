@@ -317,7 +317,7 @@ Ext.onReady(function(){
 					success: function(result) {   					
 						if(lastForm) lastForm.hide();
 						Ext.create('Ext.window.Window', {
-					    	height: 720,
+					    	height: 620,
     						width: 950,
 							autoScroll : true,
     						layout: 'fit',
