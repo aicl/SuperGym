@@ -621,6 +621,30 @@ namespace SuperGym.Tablas
 			);
 		}
 		
+		public static List<Cartera>Cartera(this IDbConnectionFactory dbFactory, bool conSaldo){
+			
+			
+			StringBuilder  var1 = new StringBuilder();
+			var1.Append("SELECT p.documento                                  AS \"Documento\", \n");
+			var1.Append("       p.nombres \n");
+			var1.Append("        || ' ' \n");
+			var1.Append("        || p.primer_apellido \n");
+			var1.Append("        || ( ' ' \n");
+			var1.Append("              || Coalesce(p.segundo_apellido, '') ) AS \"Nombre\", \n");
+			var1.Append("       s.saldo                                      AS \"Saldo\", \n");
+			var1.Append("       s.fecha                                      AS \"Fecha\", \n");
+			var1.Append("       p.telefono                                   AS \"Telefono\", \n");
+			var1.Append("       p.celular                                    AS \"Celular\" \n");
+			var1.Append("FROM   saldoporcobrar s \n");
+			var1.Append("       JOIN personas p \n");
+			var1.Append("         ON p.idpersona = s.idpersona \n");
+			if (conSaldo) var1.Append("WHERE  s.saldo > 0 ");
+			
+			return dbFactory.Exec(dbCmd => 
+				    dbCmd.Select<Cartera>( var1.ToString() ) );
+			
+		}
+		
 	}
 }
 
