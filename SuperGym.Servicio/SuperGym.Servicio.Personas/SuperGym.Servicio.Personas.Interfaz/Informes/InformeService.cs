@@ -19,7 +19,6 @@ using Reportman.Reporting;
 using Reportman.Drawing;
 
 using SuperGym.Servicio.Personas.Modelos;
-
 using ServiceStack.Logging;
 
 namespace SuperGym.Servicio.Personas.Interfaz
@@ -226,11 +225,25 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			}
 			
 			
-			return response;
-			
+			return response;			
 		}
 		
 	}
+	
+	public class CarteraService:AuthServiceBase<SuperGym.Servicio.Personas.Modelos.Cartera>{
+		protected override object Run (SuperGym.Servicio.Personas.Modelos.Cartera request)
+		{
+			
+			List<SuperGym.Records.Auxiliares.Cartera> cartera=
+				DbFactory.Cartera(true).OrderByDescending(r=> r.Fecha ).ToList();
+			
+			
+			return new CarteraResponse(){
+				Success=true,	
+				HtmlResponse=cartera.ToHtml(DateTime.Today ),
+			};
+		}
+	}
+		
 
 }
-

@@ -972,6 +972,111 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			return stringWriter.ToString();
 		}
 		
+		
+		public static string ToHtml( this List<Cartera> cartera, DateTime  fecha){
+			StringWriter stringWriter = new StringWriter();
+
+			using (HtmlTextWriter writer = new HtmlTextWriter(stringWriter))
+			{			
+								
+				writer.RenderBeginTag(HtmlTextWriterTag.H1);
+				writer.Write(string.Format("Cuentas por Cobar  <br/>"+
+				                           "Fecha : {0}",
+				                           fecha.ToString("dd.MM.yyyy") ) );
+				writer.RenderEndTag(); //h1
+				
+				
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,"width:100%"); 
+				writer.RenderBeginTag(HtmlTextWriterTag.Table);
+								
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,
+				                   "background: white"); 
+				writer.RenderBeginTag(HtmlTextWriterTag.Thead);
+				writer.RenderBeginTag(HtmlTextWriterTag.Tr);  //start tr
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    "padding: .3em;text-align:left; ");
+				writer.RenderBeginTag(HtmlTextWriterTag.Th);
+				writer.Write("Documento");
+				writer.RenderEndTag(); //th
+				
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    "padding: .3em; text-align:center; ");
+				writer.RenderBeginTag(HtmlTextWriterTag.Th);
+				writer.Write("Nombre");
+				writer.RenderEndTag(); //th
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    "padding: .3em; text-align:center; ");
+				writer.RenderBeginTag(HtmlTextWriterTag.Th);
+				writer.Write("Saldo ($)");
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    "padding: .3em; text-align:left; ");
+				writer.RenderBeginTag(HtmlTextWriterTag.Th);
+				writer.Write("Fecha");
+				writer.RenderEndTag(); //th
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    "padding: .3em; text-align:left; ");
+				writer.RenderBeginTag(HtmlTextWriterTag.Th);
+				writer.Write("Telefono");
+				writer.RenderEndTag(); //th
+				writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    "padding: .3em; text-align:left; ");
+				writer.RenderBeginTag(HtmlTextWriterTag.Th);
+				writer.Write("Celular");
+				writer.RenderEndTag(); //th
+				writer.RenderEndTag(); //tr
+				writer.RenderEndTag(); //thead
+								
+				writer.RenderBeginTag(HtmlTextWriterTag.Tbody);
+				
+				int j=0;
+				
+				
+				foreach( var x in cartera){
+					writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    (j++%2==0)? 
+					                    "background-color:#eee":
+					                    "background-color:#ccc");
+					writer.RenderBeginTag(HtmlTextWriterTag.Tr); //start tr
+					
+					writer.AddAttribute(HtmlTextWriterAttribute.Style,
+					                    "padding: .3em; ");
+					
+					writer.RenderBeginTag(HtmlTextWriterTag.Td);
+					writer.Write( x.Documento);
+					writer.RenderEndTag(); //td										
+					
+					writer.RenderBeginTag(HtmlTextWriterTag.Td);
+					writer.Write( x.Nombre);
+					writer.RenderEndTag(); //td										
+					
+					writer.RenderBeginTag(HtmlTextWriterTag.Td);
+					writer.Write("{0:##,000.00}", x.Saldo);
+					writer.RenderEndTag(); //td					
+					
+					writer.RenderBeginTag(HtmlTextWriterTag.Td);
+					writer.Write( x.Fecha.ToString("dd.MM.yyyy") );
+					writer.RenderEndTag(); //td										
+					
+					writer.RenderBeginTag(HtmlTextWriterTag.Td);
+					writer.Write( x.Telefono);
+					writer.RenderEndTag(); //td										
+					
+					
+					writer.RenderBeginTag(HtmlTextWriterTag.Td);
+					writer.Write( x.Celular);
+					writer.RenderEndTag(); //td										
+					
+					writer.RenderEndTag(); //tr
+				}
+															
+				writer.RenderEndTag(); //tbody
+				writer.RenderEndTag(); //table
+			}
+			
+			return stringWriter.ToString();
+			
+		}
+		
 	}
 }
 

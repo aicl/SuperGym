@@ -6,7 +6,6 @@ using System.Data;
 using ServiceStack.OrmSimple;
 using SuperGym.Records;
 using SuperGym.Records.Auxiliares;
-
 namespace SuperGym.Tablas
 {
 	public static class Factory
@@ -621,6 +620,7 @@ namespace SuperGym.Tablas
 			);
 		}
 		
+		
 		public static List<Cartera>Cartera(this IDbConnectionFactory dbFactory, bool conSaldo){
 			
 			
@@ -644,7 +644,6 @@ namespace SuperGym.Tablas
 				    dbCmd.Select<Cartera>( var1.ToString() ) );
 			
 		}
-		
+				
 	}
 }
-
