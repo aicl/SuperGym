@@ -66,7 +66,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 		
 		private static readonly ILog Log = LogManager.GetLogger(typeof(CajaAsentarService));
 		
-		public Mailer Mail {get;set;}
+		private Mailer Mail {get;set;}
 		
 		public AppConfig Config { get; set;}
 		
@@ -87,17 +87,16 @@ namespace SuperGym.Servicio.Personas.Interfaz
 				var uc = DbFactory.UsuariosCorreos("Caja.Asentar").
 					Where(r=>!r.Correo.IsNullOrEmpty()).ToList();
 				if (uc.Count>0){
-				
+					Mail = new Mailer(Config);
 					foreach(var r in uc){
 						Mail.Message.To.Add(r.Correo);
 					}
-							
+					
 					Mail.Message.Subject = string.Format( "Caja Cerrada {0}", caja.Fecha.ToString("dd.MM.yyyy") );
 					Mail.Message.IsBodyHtml=true;
 					List<DeCajaClasificacion> decajas = DbFactory.DeCajasClasificacion(caja.Id);
 					Mail.Message.Body = decajas.ToHtml(caja.Fecha, caja.SaldoAnterior);
 					Mail.Send();
-					Mail.Message.To.Clear();
 				}
 				
 				if( caja.Fecha.DayOfWeek == Config.DiaDeCierre){
@@ -130,6 +129,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			
 				var consolidado = DbFactory.CajaConsolidado(desde, hasta);
 				var detalles = DbFactory.DeCajasClasificacion(desde, hasta, true);
+
 				foreach(var r in uc){
 					Mail.Message.To.Add(r.Correo);
 				}
@@ -153,7 +153,9 @@ namespace SuperGym.Servicio.Personas.Interfaz
 		
 		private static readonly ILog Log = LogManager.GetLogger(typeof(CajaDesasentarService));
 		
-		public Mailer Mail {get;set;}
+		public AppConfig Config { get; set;}
+		
+		private Mailer Mail {get;set;}
 		
 		protected override object Run(CajaDesasentar request){
 			AsentadorCaja	aCaja = new AsentadorCaja(){
@@ -171,15 +173,14 @@ namespace SuperGym.Servicio.Personas.Interfaz
 				
 				var uc = DbFactory.UsuariosCorreos("Caja.Desasentar");
 				if (uc.Count>0){
+					Mail = new Mailer(Config);
 					foreach(var r in uc){
 						Mail.Message.To.Add(r.Correo);
 					}
-							
 					Mail.Message.Subject = string.Format( "Caja Abierta {0}", caja.Fecha.ToString("dd.MM.yyyy") );
 					Mail.Message.IsBodyHtml=true;
 					Mail.Message.Body = "";
 					Mail.Send();
-					Mail.Message.To.Clear();
 				}
 			}
 			catch(Exception e){

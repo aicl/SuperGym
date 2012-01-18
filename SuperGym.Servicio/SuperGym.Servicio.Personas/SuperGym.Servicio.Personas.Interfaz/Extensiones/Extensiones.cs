@@ -1,6 +1,7 @@
 using System;
-using System.Linq;
 using System.IO;
+using System.Text.RegularExpressions;
+using System.Linq;
 using System.Web.UI;
 using System.Collections.Generic;
 using SuperGym.Records;
@@ -1075,6 +1076,22 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			
 			return stringWriter.ToString();
 			
+		}
+		
+		public static bool IsValidEmail(this string inputEmail){
+		
+			if(  string.IsNullOrEmpty(inputEmail)) return false;
+			   
+		   	string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
+		         @"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" + 
+		         @".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$";
+		   	Regex re = new Regex(strRegex);
+		   	return (re.IsMatch(inputEmail));
+		   
+		}
+		
+		public static string  PdfFileName(this int id, string dir){
+			return Path.Combine(dir, id.ToString() +".pdf");
 		}
 		
 	}

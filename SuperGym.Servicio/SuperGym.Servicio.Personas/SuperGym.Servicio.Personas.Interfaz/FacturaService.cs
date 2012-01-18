@@ -1,4 +1,6 @@
 using System;
+using System.Net.Mail;
+using System.Net.Mime;
 using System.IO;
 using System.Data;
 using System.Linq;
@@ -23,6 +25,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 	public class FacturaPagoInsertService:AuthServiceBase<FacturaPagoInsert>{
 		
 		public AppConfig Config { get; set;}
+		private Mailer Mail {get;set;}
 		
 		protected override object Run(FacturaPagoInsert request){
 						
@@ -49,6 +52,8 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			// imprimir 
 			string  printMessage;
 			bool printSuccess;
+			string  mailMessage;
+			bool mailSuccess;
 			
 			try{
 				Report r = new Report();
@@ -59,21 +64,49 @@ namespace SuperGym.Servicio.Personas.Interfaz
 				r.Params["IDPAGO"].Value= request.Id.ToString();
 				
 				PrintOutPDF  pdfFile = new PrintOutPDF();
-				pdfFile.FileName= Path.Combine(Config.PrintOutDirectory, request.Id.ToString() +".pdf");
+				pdfFile.FileName= request.Id.PdfFileName(Config.PrintOutDirectory);
 				pdfFile.Print(r.MetaFile );
 				printMessage="OK";
 				printSuccess= true;
+				
+				Persona p =DbFactory.Persona(request.IdPersona);
+				if( p.Email.IsValidEmail() ){	
+					try{
+						Mail=new Mailer(Config);
+						Mail.Message.Subject = string.Format( "BodyPower Factura {0}",  request.Numero);
+						Mail.Message.IsBodyHtml=true;
+						Mail.Message.Body = "Cordial saludo.<br />Adjuntamos su factura de pago";
+						Mail.Message.To.Add(p.Email);
+						Mail.Message.Attachments.Add(new Attachment (pdfFile.FileName, MediaTypeNames.Application.Pdf));
+						Mail.Send();
+						mailMessage="OK";
+						mailSuccess=true;
+					}
+					catch(Exception e){
+						mailMessage=e.Message;
+						mailSuccess=false;
+					}
+				}
+				else{
+					mailMessage=string.Format( "Correo no Valido : '{0}'", p.Email);
+					mailSuccess=false;
+				}
+				
 			}
 			catch(Exception e){
 				printMessage=e.Message;
 				printSuccess= false;
+				mailMessage="Factura NO generada";
+				mailSuccess=false;
 			}
 			
 			return new FacturaPagoInsertResponse (){
 				Factura = request as Pago,
 				Success=true,
 				PrintSuccess= printSuccess,
-				PrintMessage= printMessage
+				PrintMessage= printMessage,
+				MailMessage= mailMessage,
+				MailSuccess= mailSuccess,
 			};
 		}
 	}
@@ -93,13 +126,15 @@ namespace SuperGym.Servicio.Personas.Interfaz
 	
 	public class FacturaSiguienteNumeroGetService:AuthServiceBase<FacturaSiguienteNumeroGet>
 	{
+		public AppConfig Config { get; set;}
+		
 		protected override object Run(FacturaSiguienteNumeroGet request)
 		{
-			var n = DbFactory.UltimaFactura().Numero;
+			var n = DbFactory.UltimaFactura(Config.LongitudFactura).Numero;
 			
 			return new FacturaSiguienteNumeroGetResponse(){
 				Success=true,
-				Numero= n.SiguienteNumero()
+				Numero= n.SiguienteNumero(Config.LongitudFactura)
 		
 			};
 			
@@ -107,6 +142,8 @@ namespace SuperGym.Servicio.Personas.Interfaz
 	}
 	
 	public class FacturaPagoAnularService:AuthServiceBase<FacturaPagoAnular>{
+		
+		public AppConfig Config { get; set;}
 		
 		protected override object Run(FacturaPagoAnular request){
 			
@@ -144,6 +181,8 @@ namespace SuperGym.Servicio.Personas.Interfaz
 				factura.Cantidad=0;
 				factura.ValorTotal=0;
 				factura.ValorUnitario=0;
+				FileInfo file = new FileInfo(factura.Id.PdfFileName(Config.PrintOutDirectory) );
+				if(file.Exists) file.Delete();
 			}
 			
 			
@@ -309,9 +348,183 @@ de Inicio de la factura {1} y Menor-igual a la fecha de terminacion de la factur
 			};
 			
 		}
-			
 		
 	}
+	
+	public class FacturaPagoImprimirService:AuthServiceBase<FacturaPagoImprimir>{
+		
+		public AppConfig Config { get; set;}
+		
+		protected override object Run (FacturaPagoImprimir request)
+		{
+			
+			string msg=string.Empty;
+			Pago factura = new Pago();
+			
+			if(request.Id != default(Int32)) {
+				factura= DbFactory.Factura(request.Id);
+				if(factura==default(Pago) ) msg= string.Format ("NO existe factura con Id:'{0}'", request.Id);
+			}
+			else
+			{ 
+				if( request.Numero.IsNullOrEmpty() ){
+					msg="Debe Indicar la factura para Imprimir";
+				}
+				else{
+					factura= DbFactory.Factura(request.Numero);
+					if(factura==default(Pago) ) msg= string.Format ("NO existe factura con Numero:'{0}'", request.Numero);
+				}
+				
+			}
+			
+			if( !msg.IsNullOrEmpty()){
+				return new FacturaPagoImprimirResponse(){
+					Success=false,
+					ResponseStatus = new ResponseStatus(){
+						ErrorCode="FacturaNoIndicada",
+						Message=msg
+					}
+				};
+			}
+			
+			FileInfo fielInfo = new FileInfo(factura.Id.PdfFileName(Config.PrintOutDirectory));
+			
+			if(!fielInfo.Exists || request.Override) {
+			
+				try{
+					Report r = new Report();
+					r.LoadFromFile( Path.Combine( Config.MetaFilesDirectory, "factura.rep") );
+					foreach(DataInfo di in r.DataInfo){
+						r.DataInfo[di.Alias].GetDbItem().ConnectionString=  Config.ReportConnection;
+					}
+					r.Params["IDPAGO"].Value= factura.Id.ToString();
+					
+					PrintOutPDF  pdfFile = new PrintOutPDF();
+					pdfFile.FileName= factura.Id.PdfFileName(Config.PrintOutDirectory);
+					pdfFile.Print(r.MetaFile );
+				}
+				catch(Exception e){
+					return new FacturaPagoImprimirResponse(){
+						Success=false,
+						ResponseStatus = new ResponseStatus(){
+							ErrorCode="ErrorImpresion",
+							Message= e.Message
+						}
+					};
+				}
+			}
+			
+			return new FacturaPagoImprimirResponse(){
+				Success=true
+			};
+		
+		}
+	}
+	
+	//
+	
+	public class FacturaPagoSendMailService:AuthServiceBase<FacturaPagoSendMail>{
+		
+		public AppConfig Config { get; set;}
+		private Mailer Mail {get;set;}
+		
+		protected override object Run (FacturaPagoSendMail request)
+		{
+			
+			string msg=string.Empty;
+			Pago factura = new Pago();
+			
+			if(request.Id != default(Int32)) {
+				factura= DbFactory.Factura(request.Id);
+				if(factura==default(Pago) ) msg= string.Format ("NO existe factura con Id:'{0}'", request.Id);
+			}
+			else
+			{ 
+				if( request.Numero.IsNullOrEmpty() ){
+					msg="Debe Indicar la factura para enviar el correo";
+				}
+				else{
+					factura= DbFactory.Factura(request.Numero);
+					if(factura==default(Pago) ) msg= string.Format ("NO existe factura con Numero:'{0}'", request.Numero);
+				}
+				
+			}
+			
+			if( !msg.IsNullOrEmpty()){
+				return new FacturaPagoSendMailResponse(){
+					Success=false,
+					ResponseStatus = new ResponseStatus(){
+						ErrorCode="FacturaNoIndicada",
+						Message=msg
+					}
+				};
+			}
+			
+			FileInfo fielInfo = new FileInfo(factura.Id.PdfFileName(Config.PrintOutDirectory));
+			
+			if(!fielInfo.Exists) {
+				try{
+					Report r = new Report();
+					r.LoadFromFile( Path.Combine( Config.MetaFilesDirectory, "factura.rep") );
+					foreach(DataInfo di in r.DataInfo){
+						r.DataInfo[di.Alias].GetDbItem().ConnectionString=  Config.ReportConnection;
+					}
+					r.Params["IDPAGO"].Value= factura.Id.ToString();
+					
+					PrintOutPDF  pdfFile = new PrintOutPDF();
+					pdfFile.FileName= factura.Id.PdfFileName(Config.PrintOutDirectory);
+					pdfFile.Print(r.MetaFile );
+				}
+				catch(Exception e){
+					return new FacturaPagoSendMailResponse(){
+						Success=false,
+						ResponseStatus = new ResponseStatus(){
+							ErrorCode="ErrorImpresion",
+							Message= e.Message
+						}
+					};
+				}
+			}	
+			
+			Persona p =DbFactory.Persona( factura.IdPersona);
+			if( p.Email.IsValidEmail() ){	
+				try{
+					Mail=new Mailer(Config);
+					Mail.Message.Subject = string.Format( "BodyPower Factura {0}",  request.Numero);
+					Mail.Message.IsBodyHtml=true;
+					Mail.Message.Body = "Cordial saludo.<br />Adjuntamos su factura de pago<br />Gracias por preferirnos";
+					Mail.Message.To.Add(p.Email);
+					Mail.Message.Attachments.Add(new Attachment (fielInfo.FullName, MediaTypeNames.Application.Pdf));
+					Mail.Send();
+				}
+				catch(Exception e){
+					return new FacturaPagoSendMailResponse(){
+						Success=false,
+						ResponseStatus = new ResponseStatus(){
+							ErrorCode="ErrorMail",
+							Message= e.Message
+						}
+					};
+				}
+			}
+			else{
+				return new FacturaPagoSendMailResponse(){
+					Success=false,
+					ResponseStatus = new ResponseStatus(){
+						ErrorCode="ErrorMail",
+						Message= string.Format( "Correo no Valido : '{0}'", p.Email)
+					}
+				};	
+			}
+		
+			
+			return new FacturaPagoSendMailResponse(){
+				Success=true
+			};
+		
+		}
+	}
+		
 	
 }
 

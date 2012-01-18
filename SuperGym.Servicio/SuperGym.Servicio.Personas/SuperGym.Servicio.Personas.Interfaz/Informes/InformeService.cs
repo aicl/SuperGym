@@ -73,7 +73,9 @@ namespace SuperGym.Servicio.Personas.Interfaz
 	
 	public class CajaConsolidadoGetService:AuthServiceBase<CajaConsolidadoGet>{
 		
-		public Mailer Mail {get;set;}
+		public AppConfig Config { get; set;}
+		
+		private Mailer Mail {get;set;}
 		
 		protected  override object Run(CajaConsolidadoGet request){
 			
@@ -99,7 +101,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 				var uc = DbFactory.UsuariosCorreos("EstadoResultados.Consultar").
 					Where(r=>!r.Correo.IsNullOrEmpty()).ToList();
 				if (uc.Count>0){
-				
+					Mail = new Mailer(Config);
 					foreach(var r in uc){
 						Mail.Message.To.Add(r.Correo);
 					}
@@ -123,7 +125,8 @@ namespace SuperGym.Servicio.Personas.Interfaz
 	
 	public class CajaCierreGetService:AuthServiceBase<CajaCierreGet>{
 		
-		public Mailer Mail {get;set;}
+		public AppConfig Config { get; set;}
+		private Mailer Mail {get;set;}
 		
 		private static readonly ILog Log = LogManager.GetLogger(typeof(CajaCierreGet));
 		
@@ -156,7 +159,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 					var uc = DbFactory.UsuariosCorreos("Caja.Asentar").
 						Where(r=>!r.Correo.IsNullOrEmpty()).ToList();
 					if (uc.Count>0){
-					
+						Mail = new Mailer(Config);
 						foreach(var r in uc){
 							Mail.Message.To.Add(r.Correo);
 						}
@@ -184,7 +187,8 @@ namespace SuperGym.Servicio.Personas.Interfaz
 	
 	public class FacturasDiaDetalleGetService:AuthServiceBase<DetalleFacturasDiaGet>{
 		
-		public Mailer Mail {get;set;}
+		public AppConfig Config { get; set;}
+		private Mailer Mail {get;set;}
 		
 		private static readonly ILog Log = LogManager.GetLogger(typeof(DetalleFacturasDiaGet));
 		
@@ -202,10 +206,10 @@ namespace SuperGym.Servicio.Personas.Interfaz
 				
 				try{
 				
-					var uc = DbFactory.UsuariosCorreos("Informe.FacturacionDia").
+					var uc = DbFactory.UsuariosCorreos("Informes.Consultar").
 						Where(r=>!r.Correo.IsNullOrEmpty()).ToList();
 					if (uc.Count>0){
-					
+						Mail = new Mailer(Config);
 						foreach(var r in uc){
 							Mail.Message.To.Add(r.Correo);
 						}

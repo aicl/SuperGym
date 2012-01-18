@@ -167,9 +167,12 @@ pre.code{
 	background-image:url(icons/silk/arrow_right.png) !important;
 }
 
-
 .clave{
 	background-image:url(icons/silk/key.png) !important;
+}
+
+.mail{
+	background-image:url(icons/silk/email.png) !important;
 }
 
 

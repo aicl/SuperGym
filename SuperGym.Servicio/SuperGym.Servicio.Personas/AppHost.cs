@@ -100,11 +100,8 @@ namespace SuperGym.Servicio.Personas
 			}
 			
 			
-			Mailer mailer = new Mailer(config);
-							
-			container.Register(mailer);
-				
-			
+			//Mailer mailer = new Mailer(config);
+			//container.Register(mailer);	
 			//HtmlReport.Register(this);
 				
 			

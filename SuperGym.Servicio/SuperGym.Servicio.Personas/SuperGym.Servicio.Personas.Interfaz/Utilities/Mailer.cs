@@ -22,7 +22,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			Message.From = new MailAddress( config.MailFrom);
 						
 			SmtpServer = new SmtpClient(config.MailServerUrl);
-			SmtpServer.Port = 587;
+			SmtpServer.Port = config.MailServerPort;
 			SmtpServer.Credentials = 
 				new System.Net.NetworkCredential(config.MailServerUser, config.MailServerPassword);
 			SmtpServer.EnableSsl = config.MailServerEnableSsl;

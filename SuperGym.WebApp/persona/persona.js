@@ -6,14 +6,14 @@ Ext.require([
     'Ext.tip.*'
 ]);
 
-function verVentanaDescarga(id){
+function verVentanaDescarga(id, mailMessage){
 	Ext.create('Ext.window.Window', {
 		closable:true,
-	    height: 100,
-	    width: 400,
+	    height: (mailMessage?mailMessage:"").length<150? 120:300,
+	    width: 450,
 	    layout: 'fit',
-	    html:Ext.String.format('<br/><br/><center><a href="../facturas/{0}.pdf">Descargar Factura</a></center>',
-							    					id)
+	    html:Ext.String.format('<center>{0}<br/><br/><center><a href="../facturas/{1}.pdf">Descargar Factura</a></center>',
+							    					mailMessage ,id)
 	}).show();
 }
 
@@ -433,7 +433,32 @@ Ext.onReady(function(){
                 iconCls:'print',
                 disabled: true,
                 handler: function(){
-                	verVentanaDescarga( gridFacturas.getSelectionModel().getSelection()[0].data.Id);
+                	verVentanaDescarga( gridFacturas.getSelectionModel().getSelection()[0].getId(),'');
+                }
+        	},'-',{
+                id: 'buttonEnviarFactura',
+                tooltip:'Enviar la factura seleccionada por mail',
+                iconCls:'mail',
+                disabled: true,
+                handler: function(){
+                	var mail = formPersona.getForm().findField('Email').getValue();
+                	if(!checkEmail(mail)){
+                		Ext.shared.msg('<div style="color:#FF0000;">Error</div>', 
+                			Ext.String.format('<div style="color:#FF0000;">Mail no valido:<br />"{0}"</div>',mail) );
+                		return;
+                	}
+                	
+                	executeAjaxRequest({
+                		url: url+'/json/asynconeway/FacturaPagoSendMail',
+                		success: function(result) {			
+							Ext.shared.msg('Listo', Ext.String.format('Factura enviada a:"{0}"',mail) );
+                		},
+                		params:{
+                			Id: gridFacturas.getSelectionModel().getSelection()[0].getId() ,
+                			SessionId:sessionStorage.id
+                		}
+                		
+                	});
                 }
         	},'-',{
                 id: 'buttonCargarFacturas',
@@ -515,6 +540,7 @@ Ext.onReady(function(){
  	gridFacturas.getSelectionModel().on('selectionchange', function(sm, selectedRecord) {
         if (selectedRecord.length) {
         	Ext.getCmp('buttonImprimirFactura').setDisabled( false);
+        	Ext.getCmp('buttonEnviarFactura').setDisabled( false);
         	Ext.getCmp('buttonVerFactura').setDisabled( false);
         	Ext.getCmp('buttonAnularFactura').setDisabled( false || disableAnular || ! selectedRecord[0].get('Activa')  );
         	Ext.getCmp('buttonVerSuspensiones').setDisabled( false || ! selectedRecord[0].get('Activa') );
@@ -523,6 +549,7 @@ Ext.onReady(function(){
         }
         else{
         	Ext.getCmp('buttonImprimirFactura').setDisabled( true);
+        	Ext.getCmp('buttonEnviarFactura').setDisabled( true);
         	Ext.getCmp('buttonVerFactura').setDisabled( true);
         	Ext.getCmp('buttonAnularFactura').setDisabled( true);
         	Ext.getCmp('buttonVerSuspensiones').setDisabled( true);
@@ -1122,7 +1149,10 @@ Ext.onReady(function(){
 						gridFacturas.getSelectionModel().doSingleSelect(nr,false);
 						Ext.getCmp('buttonGuardarFactura').setDisabled( true );
 						if(result.PrintSuccess){
-							verVentanaDescarga(result.Factura.Id);
+							verVentanaDescarga(result.Factura.Id,
+							result.MailSuccess?
+							Ext.String.format('Correo enviado exitosamente a:<br />"{0}"', formPersona.getForm().findField("Email").getValue() ):
+							Ext.String.format('<div style="color:#FF0000;">Error al Enviar Correo:<br />{0}</div>',result.MailMessage ) );
 						}
 						else{
 							Ext.shared.msg('Error al Generar la Factura', result.PrintMessage + ' -( ');

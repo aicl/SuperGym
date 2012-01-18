@@ -35,7 +35,7 @@
     <Reference Include="ServiceStack.Interfaces, Version=1.0.4189.30552, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\lib\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.OrmSimple, Version=1.0.4281.14321, Culture=neutral, PublicKeyToken=null">
+    <Reference Include="ServiceStack.OrmSimple, Version=1.0.4399.19979, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\..\lib\ServiceStack.OrmSimple.dll</HintPath>
     </Reference>
   </ItemGroup>
@@ -137,6 +137,10 @@
     <Compile Include="Operaciones\Administracion\GrupoActividadResponse.cs" />
     <Compile Include="Tipos\Informes\Cartera.cs" />
     <Compile Include="Operaciones\Informes\CarteraResponse.cs" />
+    <Compile Include="Tipos\FacturaPagoImprimir.cs" />
+    <Compile Include="Operaciones\FacturaPagoImprimirResponse.cs" />
+    <Compile Include="Operaciones\FacturaPagoSendMailResponse.cs" />
+    <Compile Include="Tipos\FacturaPagoSendMail.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Operaciones\" />

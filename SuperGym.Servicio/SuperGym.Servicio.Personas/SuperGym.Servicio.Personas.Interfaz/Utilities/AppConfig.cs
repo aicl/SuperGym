@@ -27,6 +27,8 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			MailServerPort= resources.Get<int>("MailServerPort",587); 
 			MailServerEnableSsl= resources.Get<bool>("MailServerEnableSsl",true);
 			
+			LongitudFactura=resources.Get<int>("LongitudFactura",9);
+			
 			string dow = resources.Get<string>("DiaDeCierre", "SABADO").ToUpper();
 			
 			switch(dow){
@@ -78,7 +80,9 @@ namespace SuperGym.Servicio.Personas.Interfaz
 		public string MailServerPassword { get; set;}
 		public int MailServerPort { get; set;}
 		public bool  MailServerEnableSsl { get; set;}
+		public int LongitudFactura {get; set;}
 		public DayOfWeek DiaDeCierre { get; set;}
+		
 		
 	}
 }

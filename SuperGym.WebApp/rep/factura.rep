@@ -10,10 +10,10 @@
 <GRIDWIDTH type="Integer">115</GRIDWIDTH>
 <GRIDHEIGHT type="Integer">115</GRIDHEIGHT>
 <PAGEORIENTATION type="Integer">0</PAGEORIENTATION>
-<PAGESIZE type="Integer">0</PAGESIZE>
-<PAGESIZEQT type="Integer">0</PAGESIZEQT>
-<PAGEHEIGHT type="Integer">16837</PAGEHEIGHT>
-<PAGEWIDTH type="Integer">11906</PAGEWIDTH>
+<PAGESIZE type="Integer">1</PAGESIZE>
+<PAGESIZEQT type="Integer">2</PAGESIZEQT>
+<PAGEHEIGHT type="Integer">7639</PAGEHEIGHT>
+<PAGEWIDTH type="Integer">5903</PAGEWIDTH>
 <CUSTOMPAGEHEIGHT type="Integer">16837</CUSTOMPAGEHEIGHT>
 <CUSTOMPAGEWIDTH type="Integer">11906</CUSTOMPAGEWIDTH>
 <PAGEBACKCOLOR type="Integer">16777215</PAGEBACKCOLOR>
@@ -191,7 +191,7 @@ IDPAGO</SQL>
 <SECTION>
 <NAME type="String">TRpSection2</NAME>
 <WIDTH type="Integer">10725</WIDTH>
-<HEIGHT type="Integer">2910</HEIGHT>
+<HEIGHT type="Integer">3360</HEIGHT>
 <PRINTCONDITION type="WideString"></PRINTCONDITION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
@@ -244,7 +244,7 @@ IDPAGO</SQL>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
 <BIDIMODE type="Integer">0</BIDIMODE>
 <TYPE1FONT type="Integer">0</TYPE1FONT>
-<FONTSIZE type="Integer">10</FONTSIZE>
+<FONTSIZE type="Integer">12</FONTSIZE>
 <FONTROTATION type="Integer">0</FONTROTATION>
 <FONTSTYLE type="Integer">1</FONTSTYLE>
 <FONTCOLOR type="Integer">0</FONTCOLOR>
@@ -349,12 +349,12 @@ IDPAGO</SQL>
 <NAME type="String">TRpLabel2</NAME>
 <CLASSNAME type="String">TRPLABEL</CLASSNAME>
 <WIDTH type="Integer">3450</WIDTH>
-<HEIGHT type="Integer">345</HEIGHT>
+<HEIGHT type="Integer">225</HEIGHT>
 <PRINTCONDITION type="WideString"></PRINTCONDITION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">345</POSY>
+<POSY type="Integer">690</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -376,7 +376,7 @@ IDPAGO</SQL>
 <BIDIMODES type="String"></BIDIMODES>
 <MULTIPAGE type="Boolean">False</MULTIPAGE>
 <PRINTSTEP type="Integer">0</PRINTSTEP>
-<WIDETEXT type="WideString">Nit: 900.313.096#45#5</WIDETEXT>
+<WIDETEXT type="WideString">Nit: 37.241.861#45#3</WIDETEXT>
 </COMPONENT>
 <COMPONENT>
 <NAME type="String">TRpLabel3</NAME>
@@ -569,7 +569,7 @@ IDPAGO</SQL>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">1035</POSY>
+<POSY type="Integer">1275</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -602,7 +602,7 @@ IDPAGO</SQL>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">1275</POSY>
+<POSY type="Integer">1515</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -635,7 +635,7 @@ IDPAGO</SQL>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">1635</POSY>
+<POSY type="Integer">1875</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -668,7 +668,7 @@ IDPAGO</SQL>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">1965</POSY>
+<POSY type="Integer">2205</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -701,7 +701,7 @@ IDPAGO</SQL>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">2310</POSY>
+<POSY type="Integer">2550</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -734,7 +734,7 @@ IDPAGO</SQL>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">1155</POSX>
-<POSY type="Integer">1275</POSY>
+<POSY type="Integer">1515</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -784,7 +784,7 @@ IDPAGO</SQL>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">1155</POSX>
-<POSY type="Integer">1635</POSY>
+<POSY type="Integer">1875</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -835,7 +835,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">1155</POSX>
-<POSY type="Integer">1965</POSY>
+<POSY type="Integer">2205</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -885,7 +885,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">1155</POSX>
-<POSY type="Integer">2310</POSY>
+<POSY type="Integer">2550</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -935,7 +935,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">6555</POSX>
-<POSY type="Integer">1845</POSY>
+<POSY type="Integer">2085</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -968,7 +968,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">6555</POSX>
-<POSY type="Integer">2070</POSY>
+<POSY type="Integer">2310</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1001,7 +1001,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">6555</POSX>
-<POSY type="Integer">2295</POSY>
+<POSY type="Integer">2535</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1034,7 +1034,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">7125</POSX>
-<POSY type="Integer">2070</POSY>
+<POSY type="Integer">2310</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1084,7 +1084,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">7125</POSX>
-<POSY type="Integer">2295</POSY>
+<POSY type="Integer">2535</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1134,7 +1134,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">2640</POSY>
+<POSY type="Integer">2985</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1160,11 +1160,79 @@ FO.DOCUMENTO</EXPRESSION>
  un titulo valor ( Ley 1231 de julio de 2
 008)</WIDETEXT>
 </COMPONENT>
+<COMPONENT>
+<NAME type="String">TRpExpression12</NAME>
+<CLASSNAME type="String">TRPEXPRESSION</CLASSNAME>
+<WIDTH type="Integer">5400</WIDTH>
+<HEIGHT type="Integer">345</HEIGHT>
+<PRINTCONDITION type="WideString"></PRINTCONDITION>
+<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
+<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
+<POSX type="Integer">345</POSX>
+<POSY type="Integer">345</POSY>
+<ALIGN type="Integer">0</ALIGN>
+<WFONTNAME type="WideString">Arial</WFONTNAME>
+<LFONTNAME type="WideString">Helvetica</LFONTNAME>
+<BIDIMODE type="Integer">0</BIDIMODE>
+<TYPE1FONT type="Integer">0</TYPE1FONT>
+<FONTSIZE type="Integer">10</FONTSIZE>
+<FONTROTATION type="Integer">0</FONTROTATION>
+<FONTSTYLE type="Integer">0</FONTSTYLE>
+<FONTCOLOR type="Integer">0</FONTCOLOR>
+<BACKCOLOR type="Integer">16777215</BACKCOLOR>
+<TRANSPARENT type="Boolean">True</TRANSPARENT>
+<CUTTEXT type="Boolean">False</CUTTEXT>
+<ALIGNMENT type="Integer">0</ALIGNMENT>
+<VALIGNMENT type="Integer">0</VALIGNMENT>
+<INTERLINE type="Integer">0</INTERLINE>
+<WORDWRAP type="Boolean">False</WORDWRAP>
+<WORDBREAK type="Boolean">False</WORDBREAK>
+<SINGLELINE type="Boolean">False</SINGLELINE>
+<BIDIMODES type="String"></BIDIMODES>
+<MULTIPAGE type="Boolean">False</MULTIPAGE>
+<PRINTSTEP type="Integer">0</PRINTSTEP>
+<EXPRESSION type="WideString">#39#Luz Marina Chaparro de Sanchez#39#</EXPRESSION>
+<AGINIVALUE type="WideString">0</AGINIVALUE>
+<EXPORTEXPRESSION type="WideString"></EXPORTEXPRESSION>
+<DATATYPE type="Integer">16</DATATYPE>
+<DISPLAYFORMAT type="WideString"></DISPLAYFORMAT>
+<IDENTIFIER type="String"></IDENTIFIER>
+<AGGREGATE type="Integer">0</AGGREGATE>
+<GROUPNAME type="String"></GROUPNAME>
+<AGTYPE type="Integer">0</AGTYPE>
+<AUTOEXPAND type="Boolean">False</AUTOEXPAND>
+<AUTOCONTRACT type="Boolean">False</AUTOCONTRACT>
+<PRINTONLYONE type="Boolean">False</PRINTONLYONE>
+<PRINTNULLS type="Boolean">True</PRINTNULLS>
+<EXPORTDISPLAYFORMAT type="WideString"></EXPORTDISPLAYFORMAT>
+<EXPORTLINE type="Integer">0</EXPORTLINE>
+<EXPORTPOSITION type="Integer">0</EXPORTPOSITION>
+<EXPORTSIZE type="Integer">1</EXPORTSIZE>
+<EXPORTDONEWLINE type="Boolean">False</EXPORTDONEWLINE>
+</COMPONENT>
+<COMPONENT>
+<NAME type="String">TRpShape3</NAME>
+<CLASSNAME type="String">TRPSHAPE</CLASSNAME>
+<WIDTH type="Integer">9660</WIDTH>
+<HEIGHT type="Integer">2880</HEIGHT>
+<PRINTCONDITION type="WideString"></PRINTCONDITION>
+<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
+<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
+<POSX type="Integer">120</POSX>
+<POSY type="Integer">0</POSY>
+<ALIGN type="Integer">0</ALIGN>
+<SHAPE type="Integer">0</SHAPE>
+<BRUSHSTYLE type="Integer">1</BRUSHSTYLE>
+<BRUSHCOLOR type="Integer">16777215</BRUSHCOLOR>
+<PENSTYLE type="Integer">0</PENSTYLE>
+<PENCOLOR type="Integer">0</PENCOLOR>
+<PENWIDTH type="Integer">0</PENWIDTH>
+</COMPONENT>
 </SECTION>
 <SECTION>
 <NAME type="String">TRpSection0</NAME>
 <WIDTH type="Integer">10725</WIDTH>
-<HEIGHT type="Integer">705</HEIGHT>
+<HEIGHT type="Integer">1155</HEIGHT>
 <PRINTCONDITION type="WideString"></PRINTCONDITION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
@@ -1211,7 +1279,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">0</POSY>
+<POSY type="Integer">225</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1244,7 +1312,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">1725</POSX>
-<POSY type="Integer">0</POSY>
+<POSY type="Integer">225</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1277,7 +1345,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">5745</POSX>
-<POSY type="Integer">0</POSY>
+<POSY type="Integer">225</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1310,7 +1378,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">7815</POSX>
-<POSY type="Integer">0</POSY>
+<POSY type="Integer">225</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1343,7 +1411,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">345</POSX>
-<POSY type="Integer">345</POSY>
+<POSY type="Integer">570</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1393,7 +1461,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">1725</POSX>
-<POSY type="Integer">345</POSY>
+<POSY type="Integer">570</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1443,7 +1511,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">5745</POSX>
-<POSY type="Integer">345</POSY>
+<POSY type="Integer">570</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1465,7 +1533,7 @@ FO.DOCUMENTO</EXPRESSION>
 <BIDIMODES type="String"></BIDIMODES>
 <MULTIPAGE type="Boolean">False</MULTIPAGE>
 <PRINTSTEP type="Integer">0</PRINTSTEP>
-<EXPRESSION type="WideString">INFO.UNITARIO_SINIVA</EXPRESSION>
+<EXPRESSION type="WideString">INFO.VALOR_UNITARIO</EXPRESSION>
 <AGINIVALUE type="WideString">0</AGINIVALUE>
 <EXPORTEXPRESSION type="WideString"></EXPORTEXPRESSION>
 <DATATYPE type="Integer">1</DATATYPE>
@@ -1493,7 +1561,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">7815</POSX>
-<POSY type="Integer">345</POSY>
+<POSY type="Integer">570</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1515,7 +1583,7 @@ FO.DOCUMENTO</EXPRESSION>
 <BIDIMODES type="String"></BIDIMODES>
 <MULTIPAGE type="Boolean">False</MULTIPAGE>
 <PRINTSTEP type="Integer">0</PRINTSTEP>
-<EXPRESSION type="WideString">INFO.SINIVA</EXPRESSION>
+<EXPRESSION type="WideString">INFO.VALOR_TOTAL</EXPRESSION>
 <AGINIVALUE type="WideString">0</AGINIVALUE>
 <EXPORTEXPRESSION type="WideString"></EXPORTEXPRESSION>
 <DATATYPE type="Integer">6</DATATYPE>
@@ -1533,6 +1601,24 @@ FO.DOCUMENTO</EXPRESSION>
 <EXPORTPOSITION type="Integer">0</EXPORTPOSITION>
 <EXPORTSIZE type="Integer">1</EXPORTSIZE>
 <EXPORTDONEWLINE type="Boolean">False</EXPORTDONEWLINE>
+</COMPONENT>
+<COMPONENT>
+<NAME type="String">TRpShape2</NAME>
+<CLASSNAME type="String">TRPSHAPE</CLASSNAME>
+<WIDTH type="Integer">9660</WIDTH>
+<HEIGHT type="Integer">915</HEIGHT>
+<PRINTCONDITION type="WideString"></PRINTCONDITION>
+<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
+<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
+<POSX type="Integer">120</POSX>
+<POSY type="Integer">120</POSY>
+<ALIGN type="Integer">0</ALIGN>
+<SHAPE type="Integer">0</SHAPE>
+<BRUSHSTYLE type="Integer">1</BRUSHSTYLE>
+<BRUSHCOLOR type="Integer">16777215</BRUSHCOLOR>
+<PENSTYLE type="Integer">0</PENSTYLE>
+<PENCOLOR type="Integer">0</PENCOLOR>
+<PENWIDTH type="Integer">0</PENWIDTH>
 </COMPONENT>
 </SECTION>
 <SECTION>
@@ -1577,106 +1663,6 @@ FO.DOCUMENTO</EXPRESSION>
 <BACKSTYLE type="Integer">0</BACKSTYLE>
 <DRAWSTYLE type="Integer">2</DRAWSTYLE>
 <COMPONENT>
-<NAME type="String">TRpExpression12</NAME>
-<CLASSNAME type="String">TRPEXPRESSION</CLASSNAME>
-<WIDTH type="Integer">1620</WIDTH>
-<HEIGHT type="Integer">345</HEIGHT>
-<PRINTCONDITION type="WideString"></PRINTCONDITION>
-<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
-<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
-<POSX type="Integer">7815</POSX>
-<POSY type="Integer">0</POSY>
-<ALIGN type="Integer">0</ALIGN>
-<WFONTNAME type="WideString">Arial</WFONTNAME>
-<LFONTNAME type="WideString">Helvetica</LFONTNAME>
-<BIDIMODE type="Integer">0</BIDIMODE>
-<TYPE1FONT type="Integer">0</TYPE1FONT>
-<FONTSIZE type="Integer">8</FONTSIZE>
-<FONTROTATION type="Integer">0</FONTROTATION>
-<FONTSTYLE type="Integer">0</FONTSTYLE>
-<FONTCOLOR type="Integer">0</FONTCOLOR>
-<BACKCOLOR type="Integer">16777215</BACKCOLOR>
-<TRANSPARENT type="Boolean">True</TRANSPARENT>
-<CUTTEXT type="Boolean">False</CUTTEXT>
-<ALIGNMENT type="Integer">2</ALIGNMENT>
-<VALIGNMENT type="Integer">0</VALIGNMENT>
-<INTERLINE type="Integer">0</INTERLINE>
-<WORDWRAP type="Boolean">False</WORDWRAP>
-<WORDBREAK type="Boolean">False</WORDBREAK>
-<SINGLELINE type="Boolean">False</SINGLELINE>
-<BIDIMODES type="String"></BIDIMODES>
-<MULTIPAGE type="Boolean">False</MULTIPAGE>
-<PRINTSTEP type="Integer">0</PRINTSTEP>
-<EXPRESSION type="WideString">INFO.SINIVA</EXPRESSION>
-<AGINIVALUE type="WideString">0</AGINIVALUE>
-<EXPORTEXPRESSION type="WideString"></EXPORTEXPRESSION>
-<DATATYPE type="Integer">6</DATATYPE>
-<DISPLAYFORMAT type="WideString">#35##35##35##44##35##35##35#</DISPLAYFORMAT>
-<IDENTIFIER type="String"></IDENTIFIER>
-<AGGREGATE type="Integer">0</AGGREGATE>
-<GROUPNAME type="String"></GROUPNAME>
-<AGTYPE type="Integer">0</AGTYPE>
-<AUTOEXPAND type="Boolean">False</AUTOEXPAND>
-<AUTOCONTRACT type="Boolean">False</AUTOCONTRACT>
-<PRINTONLYONE type="Boolean">False</PRINTONLYONE>
-<PRINTNULLS type="Boolean">True</PRINTNULLS>
-<EXPORTDISPLAYFORMAT type="WideString"></EXPORTDISPLAYFORMAT>
-<EXPORTLINE type="Integer">0</EXPORTLINE>
-<EXPORTPOSITION type="Integer">0</EXPORTPOSITION>
-<EXPORTSIZE type="Integer">1</EXPORTSIZE>
-<EXPORTDONEWLINE type="Boolean">False</EXPORTDONEWLINE>
-</COMPONENT>
-<COMPONENT>
-<NAME type="String">TRpExpression13</NAME>
-<CLASSNAME type="String">TRPEXPRESSION</CLASSNAME>
-<WIDTH type="Integer">1620</WIDTH>
-<HEIGHT type="Integer">345</HEIGHT>
-<PRINTCONDITION type="WideString"></PRINTCONDITION>
-<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
-<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
-<POSX type="Integer">7815</POSX>
-<POSY type="Integer">345</POSY>
-<ALIGN type="Integer">0</ALIGN>
-<WFONTNAME type="WideString">Arial</WFONTNAME>
-<LFONTNAME type="WideString">Helvetica</LFONTNAME>
-<BIDIMODE type="Integer">0</BIDIMODE>
-<TYPE1FONT type="Integer">0</TYPE1FONT>
-<FONTSIZE type="Integer">8</FONTSIZE>
-<FONTROTATION type="Integer">0</FONTROTATION>
-<FONTSTYLE type="Integer">0</FONTSTYLE>
-<FONTCOLOR type="Integer">0</FONTCOLOR>
-<BACKCOLOR type="Integer">16777215</BACKCOLOR>
-<TRANSPARENT type="Boolean">True</TRANSPARENT>
-<CUTTEXT type="Boolean">False</CUTTEXT>
-<ALIGNMENT type="Integer">2</ALIGNMENT>
-<VALIGNMENT type="Integer">0</VALIGNMENT>
-<INTERLINE type="Integer">0</INTERLINE>
-<WORDWRAP type="Boolean">False</WORDWRAP>
-<WORDBREAK type="Boolean">False</WORDBREAK>
-<SINGLELINE type="Boolean">False</SINGLELINE>
-<BIDIMODES type="String"></BIDIMODES>
-<MULTIPAGE type="Boolean">False</MULTIPAGE>
-<PRINTSTEP type="Integer">0</PRINTSTEP>
-<EXPRESSION type="WideString">INFO.IVA</EXPRESSION>
-<AGINIVALUE type="WideString">0</AGINIVALUE>
-<EXPORTEXPRESSION type="WideString"></EXPORTEXPRESSION>
-<DATATYPE type="Integer">6</DATATYPE>
-<DISPLAYFORMAT type="WideString">#35##35##35##44##35##35##35#</DISPLAYFORMAT>
-<IDENTIFIER type="String"></IDENTIFIER>
-<AGGREGATE type="Integer">0</AGGREGATE>
-<GROUPNAME type="String"></GROUPNAME>
-<AGTYPE type="Integer">0</AGTYPE>
-<AUTOEXPAND type="Boolean">False</AUTOEXPAND>
-<AUTOCONTRACT type="Boolean">False</AUTOCONTRACT>
-<PRINTONLYONE type="Boolean">False</PRINTONLYONE>
-<PRINTNULLS type="Boolean">True</PRINTNULLS>
-<EXPORTDISPLAYFORMAT type="WideString"></EXPORTDISPLAYFORMAT>
-<EXPORTLINE type="Integer">0</EXPORTLINE>
-<EXPORTPOSITION type="Integer">0</EXPORTPOSITION>
-<EXPORTSIZE type="Integer">1</EXPORTSIZE>
-<EXPORTDONEWLINE type="Boolean">False</EXPORTDONEWLINE>
-</COMPONENT>
-<COMPONENT>
 <NAME type="String">TRpExpression14</NAME>
 <CLASSNAME type="String">TRPEXPRESSION</CLASSNAME>
 <WIDTH type="Integer">1605</WIDTH>
@@ -1685,7 +1671,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">7815</POSX>
-<POSY type="Integer">690</POSY>
+<POSY type="Integer">120</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1727,72 +1713,6 @@ FO.DOCUMENTO</EXPRESSION>
 <EXPORTDONEWLINE type="Boolean">False</EXPORTDONEWLINE>
 </COMPONENT>
 <COMPONENT>
-<NAME type="String">TRpLabel20</NAME>
-<CLASSNAME type="String">TRPLABEL</CLASSNAME>
-<WIDTH type="Integer">1845</WIDTH>
-<HEIGHT type="Integer">345</HEIGHT>
-<PRINTCONDITION type="WideString"></PRINTCONDITION>
-<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
-<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
-<POSX type="Integer">5865</POSX>
-<POSY type="Integer">0</POSY>
-<ALIGN type="Integer">0</ALIGN>
-<WFONTNAME type="WideString">Arial</WFONTNAME>
-<LFONTNAME type="WideString">Helvetica</LFONTNAME>
-<BIDIMODE type="Integer">0</BIDIMODE>
-<TYPE1FONT type="Integer">0</TYPE1FONT>
-<FONTSIZE type="Integer">8</FONTSIZE>
-<FONTROTATION type="Integer">0</FONTROTATION>
-<FONTSTYLE type="Integer">0</FONTSTYLE>
-<FONTCOLOR type="Integer">0</FONTCOLOR>
-<BACKCOLOR type="Integer">16777215</BACKCOLOR>
-<TRANSPARENT type="Boolean">True</TRANSPARENT>
-<CUTTEXT type="Boolean">False</CUTTEXT>
-<ALIGNMENT type="Integer">2</ALIGNMENT>
-<VALIGNMENT type="Integer">0</VALIGNMENT>
-<INTERLINE type="Integer">0</INTERLINE>
-<WORDWRAP type="Boolean">False</WORDWRAP>
-<WORDBREAK type="Boolean">False</WORDBREAK>
-<SINGLELINE type="Boolean">False</SINGLELINE>
-<BIDIMODES type="String"></BIDIMODES>
-<MULTIPAGE type="Boolean">False</MULTIPAGE>
-<PRINTSTEP type="Integer">0</PRINTSTEP>
-<WIDETEXT type="WideString">Subtotal</WIDETEXT>
-</COMPONENT>
-<COMPONENT>
-<NAME type="String">TRpLabel21</NAME>
-<CLASSNAME type="String">TRPLABEL</CLASSNAME>
-<WIDTH type="Integer">1845</WIDTH>
-<HEIGHT type="Integer">345</HEIGHT>
-<PRINTCONDITION type="WideString"></PRINTCONDITION>
-<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
-<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
-<POSX type="Integer">5865</POSX>
-<POSY type="Integer">345</POSY>
-<ALIGN type="Integer">0</ALIGN>
-<WFONTNAME type="WideString">Arial</WFONTNAME>
-<LFONTNAME type="WideString">Helvetica</LFONTNAME>
-<BIDIMODE type="Integer">0</BIDIMODE>
-<TYPE1FONT type="Integer">0</TYPE1FONT>
-<FONTSIZE type="Integer">8</FONTSIZE>
-<FONTROTATION type="Integer">0</FONTROTATION>
-<FONTSTYLE type="Integer">0</FONTSTYLE>
-<FONTCOLOR type="Integer">0</FONTCOLOR>
-<BACKCOLOR type="Integer">16777215</BACKCOLOR>
-<TRANSPARENT type="Boolean">True</TRANSPARENT>
-<CUTTEXT type="Boolean">False</CUTTEXT>
-<ALIGNMENT type="Integer">2</ALIGNMENT>
-<VALIGNMENT type="Integer">0</VALIGNMENT>
-<INTERLINE type="Integer">0</INTERLINE>
-<WORDWRAP type="Boolean">False</WORDWRAP>
-<WORDBREAK type="Boolean">False</WORDBREAK>
-<SINGLELINE type="Boolean">False</SINGLELINE>
-<BIDIMODES type="String"></BIDIMODES>
-<MULTIPAGE type="Boolean">False</MULTIPAGE>
-<PRINTSTEP type="Integer">0</PRINTSTEP>
-<WIDETEXT type="WideString">IVA</WIDETEXT>
-</COMPONENT>
-<COMPONENT>
 <NAME type="String">TRpLabel22</NAME>
 <CLASSNAME type="String">TRPLABEL</CLASSNAME>
 <WIDTH type="Integer">1845</WIDTH>
@@ -1801,7 +1721,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">5865</POSX>
-<POSY type="Integer">690</POSY>
+<POSY type="Integer">120</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1834,7 +1754,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">120</POSX>
-<POSY type="Integer">690</POSY>
+<POSY type="Integer">1035</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <WFONTNAME type="WideString">Arial</WFONTNAME>
 <LFONTNAME type="WideString">Helvetica</LFONTNAME>
@@ -1856,40 +1776,7 @@ FO.DOCUMENTO</EXPRESSION>
 <BIDIMODES type="String"></BIDIMODES>
 <MULTIPAGE type="Boolean">False</MULTIPAGE>
 <PRINTSTEP type="Integer">0</PRINTSTEP>
-<WIDETEXT type="WideString">Firma Body Power</WIDETEXT>
-</COMPONENT>
-<COMPONENT>
-<NAME type="String">TRpLabel24</NAME>
-<CLASSNAME type="String">TRPLABEL</CLASSNAME>
-<WIDTH type="Integer">2070</WIDTH>
-<HEIGHT type="Integer">225</HEIGHT>
-<PRINTCONDITION type="WideString"></PRINTCONDITION>
-<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
-<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
-<POSX type="Integer">2535</POSX>
-<POSY type="Integer">690</POSY>
-<ALIGN type="Integer">0</ALIGN>
-<WFONTNAME type="WideString">Arial</WFONTNAME>
-<LFONTNAME type="WideString">Helvetica</LFONTNAME>
-<BIDIMODE type="Integer">0</BIDIMODE>
-<TYPE1FONT type="Integer">0</TYPE1FONT>
-<FONTSIZE type="Integer">8</FONTSIZE>
-<FONTROTATION type="Integer">0</FONTROTATION>
-<FONTSTYLE type="Integer">0</FONTSTYLE>
-<FONTCOLOR type="Integer">0</FONTCOLOR>
-<BACKCOLOR type="Integer">16777215</BACKCOLOR>
-<TRANSPARENT type="Boolean">True</TRANSPARENT>
-<CUTTEXT type="Boolean">False</CUTTEXT>
-<ALIGNMENT type="Integer">0</ALIGNMENT>
-<VALIGNMENT type="Integer">0</VALIGNMENT>
-<INTERLINE type="Integer">0</INTERLINE>
-<WORDWRAP type="Boolean">False</WORDWRAP>
-<WORDBREAK type="Boolean">False</WORDBREAK>
-<SINGLELINE type="Boolean">False</SINGLELINE>
-<BIDIMODES type="String"></BIDIMODES>
-<MULTIPAGE type="Boolean">False</MULTIPAGE>
-<PRINTSTEP type="Integer">0</PRINTSTEP>
-<WIDETEXT type="WideString">Firma Cliente#47#autorizado</WIDETEXT>
+<WIDETEXT type="WideString">Body Power</WIDETEXT>
 </COMPONENT>
 <COMPONENT>
 <NAME type="String">TRpShape0</NAME>
@@ -1900,7 +1787,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">120</POSX>
-<POSY type="Integer">570</POSY>
+<POSY type="Integer">915</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <SHAPE type="Integer">6</SHAPE>
 <BRUSHSTYLE type="Integer">0</BRUSHSTYLE>
@@ -1918,7 +1805,7 @@ FO.DOCUMENTO</EXPRESSION>
 <DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
 <DOAFTERPRINT type="WideString"></DOAFTERPRINT>
 <POSX type="Integer">2535</POSX>
-<POSY type="Integer">570</POSY>
+<POSY type="Integer">915</POSY>
 <ALIGN type="Integer">0</ALIGN>
 <SHAPE type="Integer">6</SHAPE>
 <BRUSHSTYLE type="Integer">0</BRUSHSTYLE>
@@ -1926,6 +1813,124 @@ FO.DOCUMENTO</EXPRESSION>
 <PENSTYLE type="Integer">0</PENSTYLE>
 <PENCOLOR type="Integer">0</PENCOLOR>
 <PENWIDTH type="Integer">0</PENWIDTH>
+</COMPONENT>
+<COMPONENT>
+<NAME type="String">TRpShape4</NAME>
+<CLASSNAME type="String">TRPSHAPE</CLASSNAME>
+<WIDTH type="Integer">4140</WIDTH>
+<HEIGHT type="Integer">570</HEIGHT>
+<PRINTCONDITION type="WideString"></PRINTCONDITION>
+<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
+<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
+<POSX type="Integer">5640</POSX>
+<POSY type="Integer">0</POSY>
+<ALIGN type="Integer">0</ALIGN>
+<SHAPE type="Integer">0</SHAPE>
+<BRUSHSTYLE type="Integer">1</BRUSHSTYLE>
+<BRUSHCOLOR type="Integer">16777215</BRUSHCOLOR>
+<PENSTYLE type="Integer">0</PENSTYLE>
+<PENCOLOR type="Integer">0</PENCOLOR>
+<PENWIDTH type="Integer">0</PENWIDTH>
+</COMPONENT>
+<COMPONENT>
+<NAME type="String">TRpExpression13</NAME>
+<CLASSNAME type="String">TRPEXPRESSION</CLASSNAME>
+<WIDTH type="Integer">3900</WIDTH>
+<HEIGHT type="Integer">225</HEIGHT>
+<PRINTCONDITION type="WideString"></PRINTCONDITION>
+<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
+<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
+<POSX type="Integer">2535</POSX>
+<POSY type="Integer">1035</POSY>
+<ALIGN type="Integer">0</ALIGN>
+<WFONTNAME type="WideString">Arial</WFONTNAME>
+<LFONTNAME type="WideString">Helvetica</LFONTNAME>
+<BIDIMODE type="Integer">0</BIDIMODE>
+<TYPE1FONT type="Integer">0</TYPE1FONT>
+<FONTSIZE type="Integer">8</FONTSIZE>
+<FONTROTATION type="Integer">0</FONTROTATION>
+<FONTSTYLE type="Integer">0</FONTSTYLE>
+<FONTCOLOR type="Integer">0</FONTCOLOR>
+<BACKCOLOR type="Integer">16777215</BACKCOLOR>
+<TRANSPARENT type="Boolean">True</TRANSPARENT>
+<CUTTEXT type="Boolean">False</CUTTEXT>
+<ALIGNMENT type="Integer">0</ALIGNMENT>
+<VALIGNMENT type="Integer">0</VALIGNMENT>
+<INTERLINE type="Integer">0</INTERLINE>
+<WORDWRAP type="Boolean">False</WORDWRAP>
+<WORDBREAK type="Boolean">False</WORDBREAK>
+<SINGLELINE type="Boolean">False</SINGLELINE>
+<BIDIMODES type="String"></BIDIMODES>
+<MULTIPAGE type="Boolean">False</MULTIPAGE>
+<PRINTSTEP type="Integer">0</PRINTSTEP>
+<EXPRESSION type="WideString">INFO.NOMBRES</EXPRESSION>
+<AGINIVALUE type="WideString">0</AGINIVALUE>
+<EXPORTEXPRESSION type="WideString"></EXPORTEXPRESSION>
+<DATATYPE type="Integer">16</DATATYPE>
+<DISPLAYFORMAT type="WideString"></DISPLAYFORMAT>
+<IDENTIFIER type="String"></IDENTIFIER>
+<AGGREGATE type="Integer">0</AGGREGATE>
+<GROUPNAME type="String"></GROUPNAME>
+<AGTYPE type="Integer">0</AGTYPE>
+<AUTOEXPAND type="Boolean">False</AUTOEXPAND>
+<AUTOCONTRACT type="Boolean">False</AUTOCONTRACT>
+<PRINTONLYONE type="Boolean">False</PRINTONLYONE>
+<PRINTNULLS type="Boolean">True</PRINTNULLS>
+<EXPORTDISPLAYFORMAT type="WideString"></EXPORTDISPLAYFORMAT>
+<EXPORTLINE type="Integer">0</EXPORTLINE>
+<EXPORTPOSITION type="Integer">0</EXPORTPOSITION>
+<EXPORTSIZE type="Integer">1</EXPORTSIZE>
+<EXPORTDONEWLINE type="Boolean">False</EXPORTDONEWLINE>
+</COMPONENT>
+<COMPONENT>
+<NAME type="String">TRpExpression15</NAME>
+<CLASSNAME type="String">TRPEXPRESSION</CLASSNAME>
+<WIDTH type="Integer">450</WIDTH>
+<HEIGHT type="Integer">270</HEIGHT>
+<PRINTCONDITION type="WideString"></PRINTCONDITION>
+<DOBEFOREPRINT type="WideString"></DOBEFOREPRINT>
+<DOAFTERPRINT type="WideString"></DOAFTERPRINT>
+<POSX type="Integer">120</POSX>
+<POSY type="Integer">1380</POSY>
+<ALIGN type="Integer">0</ALIGN>
+<WFONTNAME type="WideString">Arial</WFONTNAME>
+<LFONTNAME type="WideString">Helvetica</LFONTNAME>
+<BIDIMODE type="Integer">0</BIDIMODE>
+<TYPE1FONT type="Integer">0</TYPE1FONT>
+<FONTSIZE type="Integer">6</FONTSIZE>
+<FONTROTATION type="Integer">0</FONTROTATION>
+<FONTSTYLE type="Integer">0</FONTSTYLE>
+<FONTCOLOR type="Integer">0</FONTCOLOR>
+<BACKCOLOR type="Integer">16777215</BACKCOLOR>
+<TRANSPARENT type="Boolean">True</TRANSPARENT>
+<CUTTEXT type="Boolean">False</CUTTEXT>
+<ALIGNMENT type="Integer">0</ALIGNMENT>
+<VALIGNMENT type="Integer">0</VALIGNMENT>
+<INTERLINE type="Integer">0</INTERLINE>
+<WORDWRAP type="Boolean">False</WORDWRAP>
+<WORDBREAK type="Boolean">False</WORDBREAK>
+<SINGLELINE type="Boolean">False</SINGLELINE>
+<BIDIMODES type="String"></BIDIMODES>
+<MULTIPAGE type="Boolean">False</MULTIPAGE>
+<PRINTSTEP type="Integer">0</PRINTSTEP>
+<EXPRESSION type="WideString">INFO.IDPAGO</EXPRESSION>
+<AGINIVALUE type="WideString">0</AGINIVALUE>
+<EXPORTEXPRESSION type="WideString"></EXPORTEXPRESSION>
+<DATATYPE type="Integer">16</DATATYPE>
+<DISPLAYFORMAT type="WideString"></DISPLAYFORMAT>
+<IDENTIFIER type="String"></IDENTIFIER>
+<AGGREGATE type="Integer">0</AGGREGATE>
+<GROUPNAME type="String"></GROUPNAME>
+<AGTYPE type="Integer">0</AGTYPE>
+<AUTOEXPAND type="Boolean">False</AUTOEXPAND>
+<AUTOCONTRACT type="Boolean">False</AUTOCONTRACT>
+<PRINTONLYONE type="Boolean">False</PRINTONLYONE>
+<PRINTNULLS type="Boolean">True</PRINTNULLS>
+<EXPORTDISPLAYFORMAT type="WideString"></EXPORTDISPLAYFORMAT>
+<EXPORTLINE type="Integer">0</EXPORTLINE>
+<EXPORTPOSITION type="Integer">0</EXPORTPOSITION>
+<EXPORTSIZE type="Integer">1</EXPORTSIZE>
+<EXPORTDONEWLINE type="Boolean">False</EXPORTDONEWLINE>
 </COMPONENT>
 </SECTION>
 </SUBREPORT>

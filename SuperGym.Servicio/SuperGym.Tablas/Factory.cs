@@ -23,17 +23,18 @@ namespace SuperGym.Tablas
 			
 		}
 		
-		public static string SiguienteNumero(this string numero ){
+		public static string SiguienteNumero(this string numero, int longitud ){
 		
+			longitud= longitud==0?9:longitud;
 			if(string.IsNullOrEmpty(numero))
-				return "0".PadLeft(8,'0');
+				return "0".PadLeft(longitud,'0');
 			
 			Int32 n;
 			
 			if(Int32.TryParse(numero, out n) )
-				return (n+1).ToString().PadLeft( numero.Length ,'0');
+				return (n+1).ToString().PadLeft( longitud ,'0');
 			else
-				return "0".PadLeft(8,'0');
+				return "0".PadLeft(longitud,'0');
 			
 		}
 		
@@ -143,6 +144,11 @@ namespace SuperGym.Tablas
 				    dbCmd.FirstOrDefault<Persona>( "DOCUMENTO={0}", documento));
 		}
 		
+		public static Persona Persona(this IDbConnectionFactory dbFactory, Int32 id){
+			return dbFactory.Exec(dbCmd => 
+				    dbCmd.FirstOrDefault<Persona>( "IDPERSONA={0}", id));
+		}
+		
 		public static List<Persona> Personas(this IDbConnectionFactory dbFactory, 
 		                                     string sqlFilter, params object[] filterParams){
 			return dbFactory.Exec(dbCmd => 
@@ -171,19 +177,24 @@ namespace SuperGym.Tablas
 				    dbCmd.Select<Municipio>( ).OrderBy(r=> r.Nombre).ToList()  );
 		}
 		
-		public static UltimaFactura UltimaFactura( this IDbConnectionFactory dbFactory){
+		public static UltimaFactura UltimaFactura( this IDbConnectionFactory dbFactory, int longitud){
 	
 			StringBuilder  var1 = new StringBuilder();
 			var1.Append("SELECT numero_factura \n");
 			var1.Append("FROM   pagos a \n");
+			var1.AppendFormat("    where CHAR_LENGTH( a.NUMERO_FACTURA)='{0}'",longitud);
 			var1.Append("ORDER  BY a.numero_factura DESC \n");
 			var1.Append("rows 1 ");
 			
-			return dbFactory.Exec(
+			UltimaFactura uf= dbFactory.Exec(
 			    dbCmd => 
 					dbCmd.Select<UltimaFactura>(var1.ToString()).FirstOrDefault() 
 			);
 					
+			return !(uf == default(UltimaFactura)) ?
+				uf:
+				new UltimaFactura(){Numero="".SiguienteNumero(longitud)};	
+			
 		}
 				
 		public static List<TipoPago> TiposPago( this IDbConnectionFactory dbFactory){
@@ -203,8 +214,7 @@ namespace SuperGym.Tablas
 		}
 		
 		public static Pago FacturaVigente(this IDbConnectionFactory dbFactory, Int32 idPersona){
-			//List<string> x = new List<string>();
-			//x.OrderByDescending
+			
 			return dbFactory.Exec(
 			    dbCmd => 
 					dbCmd.Select<Pago>("IDPERSONA={0} and FECHAINICIO<={1} and FECHATERMINACION>={1} and ACTIVA='1' ",

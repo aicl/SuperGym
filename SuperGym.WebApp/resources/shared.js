@@ -168,3 +168,10 @@ function checkActividad(actividad){
 	var a= Ext.decode(sessionStorage.actividades);
 	return a.indexOf(actividad)>0?true:false;
 }
+
+function checkEmail(email) {
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	return filter.test(email)
+
+}
+
