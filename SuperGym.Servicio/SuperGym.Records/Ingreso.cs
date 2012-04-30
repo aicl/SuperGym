@@ -15,7 +15,7 @@ namespace  SuperGym.Records
 		[PrimaryKey]
 		[Required]
 		[Sequence("GEN_FECHASINGRESO_ID")]
-		public System.Int16 Id { get; set;} 
+		public System.Int32 Id { get; set;} 
 
 		[Alias("IDPERSONA")]
 		public System.Int32 IdPersona { get; set;} 

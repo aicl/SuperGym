@@ -70,9 +70,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AuthSession\" />
-    <Folder Include="AuthSession\" />
-    <Folder Include="AuthSession\" />
-    <Folder Include="AuthSession\" />
-    <Folder Include="AuthSession\" />
   </ItemGroup>
 </Project>
