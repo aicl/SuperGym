@@ -13,22 +13,22 @@
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin</OutputPath>
     <DefineConstants>DEBUG</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>none</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>False</Optimize>
     <OutputPath>bin</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <ConsolePause>false</ConsolePause>
+    <ConsolePause>False</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,12 +46,6 @@
     <Reference Include="ServiceStack.Interfaces, Version=1.0.4189.30552, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\lib\ServiceStack.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="ServiceStack.OrmSimple, Version=1.0.4281.14321, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\lib\ServiceStack.OrmSimple.dll</HintPath>
-    </Reference>
-    <Reference Include="ServiceStack.OrmSimple.Firebird, Version=1.0.4281.14322, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\lib\ServiceStack.OrmSimple.Firebird.dll</HintPath>
-    </Reference>
     <Reference Include="ServiceStack.Redis, Version=2.2.0.8979, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\lib\ServiceStack.Redis.dll</HintPath>
     </Reference>
@@ -66,6 +60,12 @@
     </Reference>
     <Reference Include="ServiceStack.Logging.Log4Net, Version=1.0.4176.387, Culture=neutral, PublicKeyToken=null">
       <HintPath>..\..\lib\ServiceStack.Logging.Log4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmSimple, Version=1.0.4399.19979, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\ServiceStack.OrmSimple.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.OrmSimple.Firebird, Version=1.0.4399.19980, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\lib\ServiceStack.OrmSimple.Firebird.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -98,13 +98,17 @@
       <Project>{55D8B916-A0AD-4E55-A631-4D0BF47D4DA2}</Project>
       <Name>SuperGym.Servicio.Autenticacion.Modelos</Name>
     </ProjectReference>
+    <ProjectReference Include="SuperGym.Servicio.Personas.Modelos\SuperGym.Servicio.Personas.Modelos.csproj">
+      <Project>{0C394D03-2E65-461E-9183-2F3325003C6B}</Project>
+      <Name>SuperGym.Servicio.Personas.Modelos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v9.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
     <MonoDevelop>
-      <Properties VerifyCodeBehindFields="true" VerifyCodeBehindEvents="true">
-        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="true" />
+      <Properties VerifyCodeBehindFields="True" VerifyCodeBehindEvents="True">
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
       </Properties>
     </MonoDevelop>
   </ProjectExtensions>

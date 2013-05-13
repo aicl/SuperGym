@@ -73,7 +73,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 				if( p.Email.IsValidEmail() ){	
 					try{
 						Mail=new Mailer(Config);
-						Mail.Message.Subject = string.Format( "BodyPower Factura {0}",  request.Numero);
+						Mail.Message.Subject = string.Format( "{0} Factura {1}", Config.GymName,  request.Numero);
 						Mail.Message.IsBodyHtml=true;
 						Mail.Message.Body = "Cordial saludo.<br />Adjuntamos su factura de pago";
 						Mail.Message.To.Add(p.Email);
