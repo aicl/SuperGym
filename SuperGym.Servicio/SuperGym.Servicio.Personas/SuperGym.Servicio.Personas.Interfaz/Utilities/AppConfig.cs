@@ -28,6 +28,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 			MailServerEnableSsl= resources.Get<bool>("MailServerEnableSsl",true);
 
 			GymName = resources.Get<string> ("GymName", "GymName");
+			MensajeAsunto = resources.Get<string> ("MensajeAsunto", GymName);
 
 			LongitudFactura=resources.Get<int>("LongitudFactura",9);
 			
@@ -86,6 +87,7 @@ namespace SuperGym.Servicio.Personas.Interfaz
 		public DayOfWeek DiaDeCierre { get; set;}
 
 		public string GymName { get; set; }
+		public string MensajeAsunto { get; set; }
 		
 	}
 }
