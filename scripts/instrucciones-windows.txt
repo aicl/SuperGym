@@ -1,0 +1,45 @@
+instalacion windows 
+instalar firebird server
+instalar redis server de https://github.com/rgl/redis/downloads
+
+instalar mono 
+copiar FirebirdSql.Data.FirebirdClient.dll en :
+C:\Program Files (x86)\Mono-3.0.10\lib\mono\gac\FirebirdSql.Data.FirebirdClient\2.6.5.0__3750abcc3150b00c (instalar en el gac)
+
+configurar el alias.conf de firebird para nuestar base GYM.FDB ( GYM.FDB=D:\sypergym\data\GYM.FDB)
+
+actualizar el machine config de C:\Program Files (x86)\Mono-3.0.10\etc\mono\2.0
+con el que esta en D:\sypergym\etc\mono\2.0
+
+
+actualizar el web.config de D:\sypergym\servicio: 
+especialmente
+    <add key="RootDirectory" value="D:\sypergym\aplicacion" />
+    <add key="PhotoDirectory" value="D:\sypergym\aplicacion\fotos" />
+    <add key="MetaFilesDirectory" value="D:\sypergym\aplicacion\rep" />
+    <add key="PrintOutDirectory" value="D:\sypergym\aplicacion\facturas" />
+    <add key="Log4NetConfigFile" value="D:\sypergym\servicio\log4net.conf" />
+
+
+Revisar los valores del servidor-usuario de correo.
+
+actualizar D:\sypergym\servicio\log4net.con
+
+bajar el framework ext, descomprimirlo en D:\sypergym\aplicacion , la carpeta debe quedar con el nombre extjs
+copiar D:\sypergym\aplicacion\extjs\examples\ux a D:\sypergym\aplicacion
+
+actualizar los archivos que estan en D:\sypergym\etc\mono-server2
+1 solo dejar :
+supergym-autenticacion.webapp
+supergym-servicio.webapp
+supergym-login.webapp
+2. Revisar los valores de los webapp: path y ports
+
+
+subir el xsp2 : 
+cd C:\Program Files (x86)\Mono-3.0.10\bin
+xsp2 --appconfigdir D:\sypergym\etc\mono-server2
+
+asegurarse que el redis esta arriba, si no lo esta correr :
+cd C:\Program Files\Redis
+redis-sever.exe
